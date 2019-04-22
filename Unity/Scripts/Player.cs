@@ -28,14 +28,37 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        
+        // ArcTangent y/x * 180/PI
+        // 1 Rad * 180/PI = Degrees
+        // y = -1, x = -1
+        // dir = atan(y/x);  % returns 0.78540 rad = 45 deg
+        // dir2 = atan2(y, x); % returns -2.3562 rad = -135 deg.
+        // tan A = y/x
+        // tan 
+
         Vector2 pointDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float angle = Mathf.Atan2(pointDirection.y, pointDirection.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        float zAngle = Mathf.Atan2(pointDirection.y, pointDirection.x) * Mathf.Rad2Deg;
+        float yAngle;
+        // rotation.y
+        // rotation.z
+        // ... etc
+
+        // negatvie and equal to or larger than positive
+        if(pointDirection < 0)
+        {
+            yAngle = 270f;
+        }
+        else if(pointDirection >= 0 )
+        {
+            yAngle = 0f;
+        }
+
+        Quaternion rotation = Quaternion.AngleAxis(zAngle, Vector3.forward);
+        //Vector3.forward will return (0,0,1) and angle will rotate around that axis.
+        //which means z axis and z rotation.
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+
         
-
-
         Movement();
 	}
 
@@ -75,8 +98,5 @@ public class Player : MonoBehaviour {
     {
         //TODO get mousePosition and make the model stare that direction.
     }
-    void Rotating()
-    {
-
-    }
+    
 }

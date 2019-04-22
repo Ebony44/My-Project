@@ -1,0 +1,9 @@
+04-22
+
+Raycast issue
+	Check the Layermask's layer properties.
+	and wall's colider and rigidbody, ....etc
+
+Turning function
+
+Slerp, Lerp method 

@@ -12,10 +12,11 @@ public class RangedWeapons : MonoBehaviour {
     int shootableMask;
     Vector3 shootBlast;
 
-	// Use this for initialization
+	
 	void Start () {
         shootRay.origin = transform.position;
         shootRay.direction = transform.forward;
+        // Vector3.
         //shootRay.direction = Input.mousePosition;
         //shootBlast = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
     }
@@ -36,6 +37,7 @@ public class RangedWeapons : MonoBehaviour {
         }
     }
 
+    //TODO bring Parameter "DamageDealer damage"
     private void Hitscan()
     {
         Debug.Log(transform.TransformDirection(Vector3.forward));
@@ -74,6 +76,11 @@ public class RangedWeapons : MonoBehaviour {
             Debug.Log("did not hit");
         }
         */
-
+    }
+    private void Projectile()
+    {
+        // TODO Instatiate() -> sprite and it's Vector3 someVector.Velocity()
+        // after if it works well after debugging -> separate this method to class
+        // same goes to Hitscan()
     }
 }
