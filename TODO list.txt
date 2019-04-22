@@ -4,6 +4,15 @@ Raycast issue
 	Check the Layermask's layer properties.
 	and wall's colider and rigidbody, ....etc
 
-Turning function
+Turning function -> solved
 
-Slerp, Lerp method 
+Slerp, Lerp method  -> understood
+
+
+04-23
+
+Raycast issue
+	Check the Layermask's layer properties.
+	and wall's colider and rigidbody, ....etc
+
+Enemy Spawning

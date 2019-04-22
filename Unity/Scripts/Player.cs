@@ -44,11 +44,11 @@ public class Player : MonoBehaviour {
         // ... etc
 
         // negatvie and equal to or larger than positive
-        if(pointDirection < 0)
+        if(pointDirection.x < 0)
         {
-            yAngle = 270f;
+            yAngle = 180f;
         }
-        else if(pointDirection >= 0 )
+        else
         {
             yAngle = 0f;
         }
@@ -56,9 +56,15 @@ public class Player : MonoBehaviour {
         Quaternion rotation = Quaternion.AngleAxis(zAngle, Vector3.forward);
         //Vector3.forward will return (0,0,1) and angle will rotate around that axis.
         //which means z axis and z rotation.
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        Quaternion childRotation = transform.GetChild(1).rotation;
+        childRotation = Quaternion.AngleAxis(yAngle, Vector3.up);
 
+        transform.GetChild(1).rotation = Quaternion.Slerp(transform.GetChild(1).rotation, childRotation, rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         
+
+
+
         Movement();
 	}
 
