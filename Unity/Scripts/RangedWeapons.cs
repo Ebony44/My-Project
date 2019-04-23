@@ -77,10 +77,36 @@ public class RangedWeapons : MonoBehaviour {
         }
         */
     }
-    private void Projectile()
+    private void Projectile(GameObject projectileObject)
     {
+        GameObject somethingProjectile = Instatiate(projectileObject,transform.position,Quaternion.identity) as GameObject;
+        
         // TODO Instatiate() -> sprite and it's Vector3 someVector.Velocity()
-        // after if it works well after debugging -> separate this method to class
+        // if it works well after debugging -> separate this method to class
         // same goes to Hitscan()
+
+    }
+    private void HitscanTest()
+    {
+        Vector2 pointDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 pointDirection3D = new Vector3(pointDirection.x,pointDirection.y,transform.position.z);
+        // Vector3 Default = transform.origin
+        
+        
+        
+
+        if(Physics.Raycast(transform.position, pointDirection3D,Mathf.Infinity,shootableMask))
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * shootHit.distance, Color.white);
+            Debug.Log("did hit");
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 500, Color.yellow);
+            Debug.Log("did not hit");
+        }
+
+        // test this at home.
+        
     }
 }

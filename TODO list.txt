@@ -11,8 +11,34 @@ Slerp, Lerp method  -> understood
 
 04-23
 
+Understand and be familiar with Trigonometric fucntions
+
+Player.cs
+
+Polishing the movement
+	make transient moveline(through border)
+	-> modify SetupBoundaries()
+	
+
+RangedWeapon.cs
+
 Raycast issue
 	Check the Layermask's layer properties.
 	and wall's colider and rigidbody, ....etc
 
+-solution 1
+	make mousePosition Vector 2 not Vector3
+	->Z axis may cause problems.
+->solution 2
+	..well after solution 1 failed
+	
+
+expansion issue
+	Enemy class will use this or it's child
+	make it struct or derived class
+
+Projectile Initiating
+
+
 Enemy Spawning
+
