@@ -22,6 +22,10 @@ Polishing the movement
 
 RangedWeapon.cs
 
+Fire() issue
+	When Player Turning( rotation.y is modifying)
+	call Coroutine to stop the function.
+
 Raycast issue
 	Check the Layermask's layer properties.
 	and wall's colider and rigidbody, ....etc
