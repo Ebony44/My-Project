@@ -18,13 +18,17 @@ Player.cs
 Polishing the movement
 	make transient moveline(through border)
 	-> modify SetupBoundaries()
+
+set X, Y boundary => Camera's size
+or
+search the scroll roll on screen
+
+
 	
 
 RangedWeapon.cs
 
-Fire() issue
-	When Player Turning( rotation.y is modifying)
-	call Coroutine to stop the function.
+
 
 Raycast issue
 	Check the Layermask's layer properties.
@@ -43,6 +47,15 @@ expansion issue
 
 Projectile Initiating
 
-
 Enemy Spawning
+
+
+0424
+
+Fire() issue
+	When Player Turning( rotation.y is modifying)
+	call Coroutine to stop the function.
+	which method call this.
+
+0425
 

@@ -82,8 +82,6 @@ public class Player : MonoBehaviour {
         //transform.LookAt(mousePosV2);
         
         
-        
-        
         //transform.Rotate(0f, yAngle, zAngle);
         
         Movement();
