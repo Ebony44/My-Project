@@ -1,0 +1,10 @@
+
+
+RangedWeapon -> it will include "Player.cs" and "Enemy.cs"
+
+for get some variables like "Turning()", "float fireRate"....etc 
+// the conditions which interrupt firing, or variables affect fire method...
+
+when y axis changed -> call Turning()
+
+
