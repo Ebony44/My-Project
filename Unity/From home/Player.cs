@@ -16,7 +16,8 @@ public class Player : MonoBehaviour {
     float yMaxSpeed = 16;
 
     //bool bIsleft = false;
-    [SerializeField] bool bIsturned = true;
+    [SerializeField] bool bIsturning = true;
+    [SerializeField] bool bIsLeft = false;
     
     
     // Use this for initialization
@@ -49,40 +50,67 @@ public class Player : MonoBehaviour {
         // rotation.y
         // rotation.z
         // ... etc
-
         
         Quaternion rotation = Quaternion.AngleAxis(zAngle, Vector3.forward);
         Quaternion rotation2 = Quaternion.AngleAxis(zAngle2, Vector3.forward);
-        //Quaternion rotation3 = Quaternion.AngleAxis(zAngle3, Vector3.forward);
+        Quaternion rotation3 = Quaternion.AngleAxis(zAngle3, Vector3.forward);
+        Transform childTransform = transform.GetChild(1).GetChild(0);
+        Quaternion targetRotation = Quaternion.LookRotation(pointDirection, Vector3.up);
 
 
         // negatvie and equal to or larger than positive
-        if (pointDirection.x < 0 && bIsturned)
+        if (pointDirection.x < 0)
         {
-            yAngle = -180f;
+            
+            yAngle = 270f;
             //transform.GetChild(1).GetChild(0).Rotate(Vector3.up, yAngle);
             //bIsturned = false;
+            
 
-            rotation2 = Quaternion.Euler(0f, 180f, zAngle2);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation2, rotationSpeed * Time.deltaTime);
+            //rotation2 = Quaternion.Euler(0f, 180f, zAngle2);
+            //yAngle = 270f;
+            
 
+            if(!bIsLeft)
+            {
+                //childTransform.Rotate(Vector3.up, yAngle);
+                //Quaternion childRotation = Quaternion.Euler(0f, yAngle, 0f);
+
+                //childTransform.rotation = Quaternion.FromToRotation(Vector3.up, transform.forward);
+                
+                childTransform.rotation = Quaternion.Slerp(childTransform.rotation,targetRotation , rotationSpeed * Time.deltaTime);
+                //Quaternion childRotation = Quaternion.Slerp()
+                //childTransform.rotation = childRotation;
+                if(childTransform.rotation.y == 270 && childTransform.rotation.y == -90)
+                {
+                    bIsLeft = true;
+                }
+                
+            }
+            else if (/*childTransform.rotation.y == 270 || childTransform.rotation.y == -90 && */ bIsLeft == true)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation3, rotationSpeed * Time.deltaTime);
+            }
+
+            
         }
-        else if(pointDirection.x >= 0 && bIsturned)
+        else if(pointDirection.x >= 0)
         {
-            yAngle = 180f;
+            bIsLeft = false;
+            if(/*childTransform.rotation.y == 90 || childTransform.rotation.y == -270 &&*/ bIsLeft == false)
+            {
+                childTransform.rotation = Quaternion.Slerp(childTransform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            }
+            yAngle = 90f;
             //transform.GetChild(1).GetChild(0).Rotate(Vector3.up, yAngle);
             //bIsturned = false;
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
 
         }
         
         Vector2 mousePosV2 = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, 
             Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
-        //transform.LookAt(mousePosV2);
-        
-        
-        //transform.Rotate(0f, yAngle, zAngle);
         
         Movement();
 	}

@@ -30,7 +30,7 @@ RangedWeapon.cs
 
 
 
-Raycast issue
+Raycast issue  -->solved --> expansion issue. if Enemy.cs use this...  overload?
 	Check the Layermask's layer properties.
 	and wall's colider and rigidbody, ....etc
 
@@ -41,7 +41,7 @@ Raycast issue
 	..well after solution 1 failed
 	
 
-expansion issue
+expansion issue 
 	Enemy class will use this or it's child
 	make it struct or derived class
 
@@ -57,5 +57,25 @@ Fire() issue
 	call Coroutine to stop the function.
 	which method call this.
 
-0425
+0425~0426
 
+MeleeWeapon.cs
+
+-Projectile reflecting
+-Guarding function
+
+
+0429 in company
+
+- grab some Background image
+- Coroutine -> understand again to use.
+- make some model for enemies
+
+Hitscan(float acc, float firstFireRate)
+-> adjust timing(delete lineRenderer, firing period)
+
+
+etc
+
+bullet, laser, rocket
+accuracy -> modifying Y values
