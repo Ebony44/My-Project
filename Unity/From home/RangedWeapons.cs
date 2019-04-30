@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class RangedWeapons : MonoBehaviour {
 
+    float timer;
 
     [Header("Hitscan Weapon")]
     [SerializeField] float firstFireRate=2f;
-    [SerializeField] float afterFireRate;
+    [SerializeField] float afterFireRate=1f;
+    [SerializeField] float effectDisplayTime = 0.2f;
 
 
     Ray shootRay = new Ray();
@@ -18,18 +20,14 @@ public class RangedWeapons : MonoBehaviour {
     LineRenderer laserline;
 
     float range = 50f;
-    [SerializeField] public float Accuracy { get; set; }
+    [SerializeField] private float accuracy;
+    public float Accuracy { get {return accuracy;} set { accuracy = value;} }
     
     Vector2 mousePosV2;
     Vector3 shootBlast;
     Vector3 shootDirection;
 
-
     Coroutine firingCoroutine;
-
-
-
-
 
     void Start () {
         shootRay.origin = transform.position;
@@ -41,8 +39,6 @@ public class RangedWeapons : MonoBehaviour {
         //shootableMask = 8;
         //shootableMask = ~shootableMask;
 
-
-
         // Vector3.
         //shootRay.direction = Input.mousePosition;
         //shootBlast = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
@@ -51,13 +47,13 @@ public class RangedWeapons : MonoBehaviour {
     
 	
 	// Update is called once per frame
-	void Update () {
-        
-        // everything but 8 can be shootable
+	void Update () 
+    {
+        timer += Time.deltaTime;
         Fire();
 	}
 
-    public void Fire()
+    public void Fire(float afterFireRate)
     {
         /*
         if(Input.GetMouseButton(0))
@@ -65,22 +61,24 @@ public class RangedWeapons : MonoBehaviour {
             //Hitscan(Accuracy);
         }
         */
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && afterFireRate >= timer)
         {
-            firingCoroutine = StartCoroutine(Hitscan(Accuracy, firstFireRate));
+            //firingCoroutine = StartCoroutine(Hitscan(Accuracy, afterFireRate));
+            Hitscan(Accuracy);
         }
-        else if(Input.GetButtonDown("Fire1"))
+        else if(Input.GetButtonUp("Fire1"))
         {
-            StopCoroutine(firingCoroutine);
+            //StopCoroutine(firingCoroutine);
         }
     }
 
     //TODO bring Parameter "DamageDealer damage"
-    private IEnumerator Hitscan(float accuracy, float firstFireRate)
+    private void Hitscan(float accuracy)//, float afterFireRate)
     {
         while(true)
         {
             laserline.SetPosition(0, transform.position);
+            laserline.enabled = true;
 
 
             mousePosV2 = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -107,8 +105,13 @@ public class RangedWeapons : MonoBehaviour {
                 laserline.SetPosition(1, shootDirection * range / 10f);
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * 500, Color.yellow);
                 Debug.Log("did not hit");
+
             }
-            yield return new WaitForSeconds(firstFireRate);
+            
+            //yield return new WaitForSeconds(afterFireRate);
+
+            
+            
         }
         
         

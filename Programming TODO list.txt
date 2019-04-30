@@ -67,15 +67,30 @@ MeleeWeapon.cs
 
 0429 in company
 
-- grab some Background image
-- Coroutine -> understand again to use.
-- make some model for enemies
+- grab some Background image -> solved
+- Coroutine -> understand again to use. -> solved
+- make some model for enemies -> maybe delayed
 
 Hitscan(float acc, float firstFireRate)
 -> adjust timing(delete lineRenderer, firing period)
+
+what is afterFireRate => fire interval time between each fire
+
+-> Fire() or Hitscan() -> every weapon has it's own fireRate so it should be Fire()
 
 
 etc
 
 bullet, laser, rocket
 accuracy -> modifying Y values
+
+0429 at home
+
+Ricochet from xionic madness
+Enemy.cs
+
+
+0430 at home
+
+Enemy.cs
+	->movement()
