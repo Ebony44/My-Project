@@ -94,3 +94,28 @@ Enemy.cs
 
 Enemy.cs
 	->movement()
+
+
+0502
+
+at comp
+
+-Initiate HeapSorting in c# -> understand sort the largest number of the array
+-> the way i learn is sorting the largest number come to 1st. make it last.
+
+-review the c++ course
+
+-solve the problem in Visual Studio Code Compiling problem
+-> solved... but the way is HARD CODED...
+
+at home
+Enemy.cs
+	-> OnTriggerEnter
+	-> Collision checks, Trigger checks
+
+
+0503
+
+Heapsorting in C#
+-> the way i learn is sorting the largest number come to 1st. make it last.
+
