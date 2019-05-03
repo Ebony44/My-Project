@@ -117,5 +117,16 @@ Enemy.cs
 0503
 
 Heapsorting in C#
--> the way i learn is sorting the largest number come to 1st. make it last.
+-> the way i learn is sorting the largest number coming to 1st. make it last.
+->when sorting, it will be the last and index 0 will be the lowest and begin to sort.
+-> called maxheap
+
+
+Screen Wrapping -> most 2d Platformer has this trait of art... -> solved.. kind of.. need to run and test it's working properly. -> need to move this method to Movement.cs or something else which include that class
+
+
+0504-0505
+
+Make Enemy Spawning -> Spawner.cs
+Make Area to Rogue-like -> 
 
