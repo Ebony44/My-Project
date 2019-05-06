@@ -1,0 +1,3 @@
+setf
+
+set the bit flags

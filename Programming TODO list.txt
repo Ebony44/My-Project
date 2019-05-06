@@ -130,3 +130,9 @@ Screen Wrapping -> most 2d Platformer has this trait of art... -> solved.. kind 
 Make Enemy Spawning -> Spawner.cs
 Make Area to Rogue-like -> 
 
+
+0506-0507
+
+crumble, destryoing particle effect
+
+Enemy's AI: pathfinding - Brackeys, A* algorithm
