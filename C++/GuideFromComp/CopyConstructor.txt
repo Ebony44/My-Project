@@ -1,0 +1,15 @@
+http://www.fredosaurus.com/notes-cpp/oop-condestructors/shallowdeepcopy.html
+
+https://en.wikipedia.org/wiki/Assignment_operator_(C%2B%2B)
+
+http://www.fredosaurus.com/notes-cpp/oop-overloading/overloadassign.html
+
+
+
+Rule of Three
+https://en.wikipedia.org/wiki/Rule_of_three_(C%2B%2B_programming)
+
+    destructor
+    copy constructor
+    copy assignment operator
+
