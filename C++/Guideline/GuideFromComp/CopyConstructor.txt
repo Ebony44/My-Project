@@ -1,6 +1,10 @@
 http://www.fredosaurus.com/notes-cpp/oop-condestructors/shallowdeepcopy.html
 
 https://en.wikipedia.org/wiki/Assignment_operator_(C%2B%2B)
+->Overloading copy assignment operator
+https://www.youtube.com/results?search_query=copy+constructor+and+assignment+operator
+->Overloading copy assignment operator2
+
 
 http://www.fredosaurus.com/notes-cpp/oop-overloading/overloadassign.html
 
