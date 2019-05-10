@@ -1,0 +1,6 @@
+﻿  MyString.cpp
+C:\Users\tiMUN\source\repos\CPP\AssignmentPrac1\AssignmentPrac1\AssignmentPrac1\MyString.cpp(85): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\tiMUN\source\repos\CPP\AssignmentPrac1\AssignmentPrac1\AssignmentPrac1\MyString.cpp(133): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\tiMUN\source\repos\CPP\AssignmentPrac1\AssignmentPrac1\AssignmentPrac1\MyString.cpp(170): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\tiMUN\source\repos\CPP\AssignmentPrac1\AssignmentPrac1\AssignmentPrac1\MyString.cpp(268): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  AssignmentPrac1.vcxproj -> C:\Users\tiMUN\source\repos\CPP\AssignmentPrac1\AssignmentPrac1\Debug\AssignmentPrac1.exe
