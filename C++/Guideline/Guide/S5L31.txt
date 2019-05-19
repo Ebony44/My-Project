@@ -1,0 +1,19 @@
+모드 플래그
+
+in 입력
+out 출력
+ate at-the-end 마지막부터 쓸 것이다.
+app -> append 덧붙이기
+trunc -> truncation 읽은 다음에 다 버린다.
+binary -> 2진법
+
+
+C++의 경우
+
+ifstream fin;
+
+fin이 스코프를 벗어나면 알아서 소멸하기는 하나,
+
+1. 보기 좋으라고 fin.close();를 하기도 하고..
+
+2. 스코프를 벗어나지 않을 때 일찍 닫아주려고 하는 경우도 있음.

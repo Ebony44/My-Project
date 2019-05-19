@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="1. Using auto Keyword">
+      <UniqueIdentifier>{fe9ceb71-5b97-4fe9-a5a4-c9e8b723d517}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2. Using static_assert Keyword">
+      <UniqueIdentifier>{a6639657-d650-48a5-b49e-f922cb2e1967}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3. Using default/delete and final/override Keyword">
+      <UniqueIdentifier>{f7ae00ed-0ace-4d90-ad02-01d1f6d21d6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Set color with eColor">
+      <UniqueIdentifier>{5889c689-92db-4cf2-975a-db7216bba99b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AutoKeywordExample.cpp">
+      <Filter>1. Using auto Keyword</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="StaticAssertExample.cpp">
+      <Filter>2. Using static_assert Keyword</Filter>
+    </ClCompile>
+    <ClCompile Include="Pope.cpp">
+      <Filter>3. Using default/delete and final/override Keyword</Filter>
+    </ClCompile>
+    <ClCompile Include="Human.cpp">
+      <Filter>3. Using default/delete and final/override Keyword</Filter>
+    </ClCompile>
+    <ClCompile Include="PopeClone.cpp">
+      <Filter>3. Using default/delete and final/override Keyword</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultDeleteFinalOverrideExample.cpp">
+      <Filter>3. Using default/delete and final/override Keyword</Filter>
+    </ClCompile>
+    <ClCompile Include="EnumExample.cpp">
+      <Filter>4. Set color with eColor</Filter>
+    </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>4. Set color with eColor</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AutoKeywordExample.h">
+      <Filter>1. Using auto Keyword</Filter>
+    </ClInclude>
+    <ClInclude Include="MyVector.h">
+      <Filter>1. Using auto Keyword</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticAssertExample.h">
+      <Filter>2. Using static_assert Keyword</Filter>
+    </ClInclude>
+    <ClInclude Include="Pope.h">
+      <Filter>3. Using default/delete and final/override Keyword</Filter>
+    </ClInclude>
+    <ClInclude Include="Human.h">
+      <Filter>3. Using default/delete and final/override Keyword</Filter>
+    </ClInclude>
+    <ClInclude Include="PopeClone.h">
+      <Filter>3. Using default/delete and final/override Keyword</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultDeleteFinalOverrideExample.h">
+      <Filter>3. Using default/delete and final/override Keyword</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumExample.h">
+      <Filter>4. Set color with eColor</Filter>
+    </ClInclude>
+    <ClInclude Include="EColor.h">
+      <Filter>4. Set color with eColor</Filter>
+    </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>4. Set color with eColor</Filter>
+    </ClInclude>
+    <ClInclude Include="IntVector4D.h">
+      <Filter>2. Using static_assert Keyword</Filter>
+    </ClInclude>
+    <ClInclude Include="IntVector3D.h">
+      <Filter>2. Using static_assert Keyword</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
