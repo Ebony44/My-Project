@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
     float camZPos;
     float xMinSpeed = 0;
     float yMinSpeed = 0;
-    float xMaxSpeed = 18;
+    float xMaxSpeed = 28;
     float yMaxSpeed = 16;
 
     //bool bIsleft = false;

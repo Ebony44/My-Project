@@ -9,7 +9,7 @@ public class RangedWeapons : MonoBehaviour {
 
     [Header("Hitscan Weapon")]
     [SerializeField] float firstFireRate=2f;
-    [SerializeField] float afterFireRate=1f;
+    [SerializeField] float afterFireRate=0.4f;
     [SerializeField] float effectDisplayTime = 0.2f;
 
 
@@ -17,7 +17,7 @@ public class RangedWeapons : MonoBehaviour {
     RaycastHit shootHit;
     
     int shootableMask;
-    LineRenderer laserline;
+    LineRenderer laserLine;
 
     float range = 50f;
     [SerializeField] private float accuracy;
@@ -42,7 +42,7 @@ public class RangedWeapons : MonoBehaviour {
         // Vector3.
         //shootRay.direction = Input.mousePosition;
         //shootBlast = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
-        laserline = GetComponent<LineRenderer>();
+        laserLine = GetComponent<LineRenderer>();
     }
     
 	
@@ -50,7 +50,7 @@ public class RangedWeapons : MonoBehaviour {
 	void Update () 
     {
         timer += Time.deltaTime;
-        Fire();
+        Fire(afterFireRate);
 	}
 
     public void Fire(float afterFireRate)
@@ -61,10 +61,15 @@ public class RangedWeapons : MonoBehaviour {
             //Hitscan(Accuracy);
         }
         */
-        if(Input.GetButtonDown("Fire1") && afterFireRate >= timer)
+        //Input.GetButtonDown("Fire1")
+        if (Input.GetButton("Fire1") && afterFireRate <= timer)
         {
             //firingCoroutine = StartCoroutine(Hitscan(Accuracy, afterFireRate));
             Hitscan(Accuracy);
+        }
+        if(timer >= afterFireRate * effectDisplayTime)
+        {
+            laserLine.enabled = false;
         }
         else if(Input.GetButtonUp("Fire1"))
         {
@@ -75,11 +80,9 @@ public class RangedWeapons : MonoBehaviour {
     //TODO bring Parameter "DamageDealer damage"
     private void Hitscan(float accuracy)//, float afterFireRate)
     {
-        while(true)
-        {
-            laserline.SetPosition(0, transform.position);
-            laserline.enabled = true;
-
+        timer = 0f;
+            laserLine.SetPosition(0, transform.position);
+            laserLine.enabled = true;
 
             mousePosV2 = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             accuracy = Random.Range(0, mousePosV2.y + accuracy);
@@ -94,7 +97,7 @@ public class RangedWeapons : MonoBehaviour {
                 shootableMask
                 ))
             {
-                laserline.SetPosition(1, shootHit.point);
+                laserLine.SetPosition(1, shootHit.point);
 
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * shootHit.distance, Color.white);
                 Debug.Log("did hit");
@@ -102,17 +105,14 @@ public class RangedWeapons : MonoBehaviour {
             else
             {
                 //laserline.SetPosition(1, shootRay.origin + shootRay.direction * range);
-                laserline.SetPosition(1, shootDirection * range / 10f);
+                laserLine.SetPosition(1, shootDirection * range / 10f);
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * 500, Color.yellow);
                 Debug.Log("did not hit");
 
             }
             
             //yield return new WaitForSeconds(afterFireRate);
-
             
-            
-        }
         
         
     }
