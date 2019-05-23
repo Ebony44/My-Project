@@ -14,6 +14,10 @@ public class WonderfulFailurePlayer : MonoBehaviour {
     float yMinSpeed = 0;
     float xMaxSpeed = 16;
     float yMaxSpeed = 16;
+
+    public float maxThrust;
+    public float maxTorque;
+    public Rigidbody2D rb;
     
     
     // Use this for initialization
@@ -21,6 +25,18 @@ public class WonderfulFailurePlayer : MonoBehaviour {
     {
         cam = FindObjectOfType<Camera>();
         camZPos = cam.transform.position.z + 10f;
+        // Add a random amount...
+
+        Vector2 thrust = new Vector2(Random.Range(-maxThrust, maxThrust), Random.Range(-maxThrust, maxThrust));
+        float torque = Random.Range(-maxTorque, maxTorque);
+
+        rb.AddForce(thrust);
+        rb.AddTorque(torque);
+        
+
+
+
+
     }
         
 
@@ -28,15 +44,42 @@ public class WonderfulFailurePlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        // ArcTangent y/x * 180/PI
-        // 1 Rad * 180/PI = Degrees
-        // y = -1, x = -1
-        // dir = atan(y/x);  % returns 0.78540 rad = 45 deg
-        // dir2 = atan2(y, x); % returns -2.3562 rad = -135 deg.
-        // tan A = y/x
-        // tan 
 
-        Vector2 pointDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector2 newPos = transform.position;
+        if(transform.position.y > screenTop)
+        {
+            newPos.y = screenBottom;
+        }
+        if(transform.position.y < screenBottom)
+        {
+            newPos.y = screenTop;
+        }
+        if (transform.position.x > screenRight)
+        {
+            newPos.x = screenLeft;
+        }
+        if (transform.position.x < screenLeft)
+        {
+            newPos.x = screenRight;
+        }
+        transform.position = newPos;
+
+
+
+            // seek screen top and bottom, right and left
+            //
+
+
+
+            // ArcTangent y/x * 180/PI
+            // 1 Rad * 180/PI = Degrees
+            // y = -1, x = -1
+            // dir = atan(y/x);  % returns 0.78540 rad = 45 deg
+            // dir2 = atan2(y, x); % returns -2.3562 rad = -135 deg.
+            // tan A = y/x
+            // tan 
+
+            Vector2 pointDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float zAngle = Mathf.Atan2(pointDirection.y, pointDirection.x) * Mathf.Rad2Deg;
         float yAngle;
         // rotation.y

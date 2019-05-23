@@ -14,7 +14,7 @@ namespace HeapSortingTest1
             Console.WriteLine("asdf");
 
 
-            int[] mykeys = new int[] { 2, 5, -4, 11, 0, 18, 22, 67, 51, 6 };
+            //int[] mykeys = new int[] { 2, 5, -4, 11, 0, 18, 22, 67, 51, 6 };
             int[] testKeys = new int[] { 2, 8, 5, 3, 9, 1 };
 
             //double[] mykeys = new double[] {2.22, 0.5, 2.7, -1.0, 11.2};
@@ -29,9 +29,9 @@ namespace HeapSortingTest1
             //hs.BuildHeap(mykeys);
             hs.BuildHeap(testKeys);
 
-            foreach (int mykey in mykeys)
+            foreach (int testkey in testKeys)
             {
-                Console.WriteLine(mykey);
+                Console.WriteLine(testKeys);
             }
 
 

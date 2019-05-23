@@ -37,7 +37,7 @@ namespace HeapSortingTest1
             {
                 largest = left;
             }
-            if(right <= heapSize && arr[right] > arr[left])
+            if(right <= heapSize && arr[right] > arr[largest])
             {
                 largest = right;
             }
@@ -51,7 +51,23 @@ namespace HeapSortingTest1
         }
         public void PerformHeapSort(int[] arr)
         {
+            // after build max heap, heap sorting.
+            // 4 10 3 5 1
+            // 10 5 4 3 1
 
+            BuildHeap(arr);
+
+            for (int i = arr.Length - 1; i >= 0; i--) 
+            {
+                Swap(arr, 0, i); // largest to last
+                heapSize--; // delete last and consider it's sorted
+
+                Heapify(arr, 0); // again.
+
+            }
+                
+            
+            
         }
         private void DisplayArray(int[] arr)
         {

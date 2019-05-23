@@ -140,3 +140,7 @@ Enemy's AI: pathfinding - Brackeys, A* algorithm
 0521 
 
 random world generator, map seeds
+
+0523
+
+collision with asteroids -> do not go through them.

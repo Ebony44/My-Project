@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -movementSpeed * Time.deltaTime);
         }
     }
-    void Debugiing()
+    void Debugging()
     {
         Debug.Log(PlayerPosition - transform.position);
     }
