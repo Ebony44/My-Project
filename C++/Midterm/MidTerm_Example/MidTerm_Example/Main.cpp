@@ -101,8 +101,8 @@ void VirtualDestructorTest()
 {
 	Cat8* cat1 = new Cat8("Kitty");
 	Cat8 cat2(*cat1);
-	delete a;
-	b.PrintName();
+	delete cat1;
+	cat2.PrintName();
 
 }
 
