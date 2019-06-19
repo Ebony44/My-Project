@@ -147,10 +147,6 @@ public class Player : MonoBehaviour {
         yMinSpeed= cam.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
         yMaxSpeed = cam.ViewportToWorldPoint(new Vector3(0, 1, 0)).y + padding;
     }
-    private void ScreenThrough()
-    {
-
-    }
     /*
     private IEnumerator DirectionStaring(bool bIsturned)
     {
