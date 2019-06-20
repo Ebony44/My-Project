@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 namespace midterm
 {
 	class Animal8
@@ -9,7 +11,7 @@ namespace midterm
 		~Animal8();
 		virtual void PrintName() const = 0;
 	protected:
-		const char& mName;
+		const char* mName;
 
 
 

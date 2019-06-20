@@ -17,7 +17,7 @@ namespace midterm
 		Class3 temp(x);
 		return temp;
 	}
-	int Class3::GetX()
+	int Class3::GetX() const
 	{
 		return mX;
 	}

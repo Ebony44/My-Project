@@ -36,6 +36,15 @@
     <ClCompile Include="Exam1_Animal8.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Exam1_PointAndRef15.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Exam1_VirtualFunction13.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Exam1_VirtualFunction_Derived13.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exam1_base.h">
@@ -54,6 +63,15 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Exam1_Cat8.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Exam1_PointAndRef15.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Exam1_VirtualFunction13.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Exam1_VirtualFunction_Derived13.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

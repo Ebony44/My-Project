@@ -21,6 +21,12 @@
 #include "Exam1_Animal8.h"
 #include "Exam1_Cat8.h"
 
+#include "Exam1_VirtualFunction13.h"
+#include "Exam1_VirtualFunction_Derived13.h"
+
+
+#include "Exam1_PointAndRef15.h"
+
 using namespace midterm;
 using namespace std;
 
@@ -30,7 +36,9 @@ using namespace std;
 
 std::ostream& operator<<(std::ostream& stream, const Class3& other)
 {
-
+	
+	stream << other.GetX() << endl;
+	return stream;
 }
 
 
@@ -104,14 +112,51 @@ void VirtualDestructorTest()
 	delete cat1;
 	cat2.PrintName();
 
+	// 1. copy constructor missing
+	// 2. base class' destructor isn't virtual
+	// 3. well....
+
 }
+
+void PointAndRefTest()
+{
+	PointAndRef15 p(10, 20);
+	int *arr = (int*)&p;
+	cout << arr[2] << endl;
+
+}
+
+void VirtualFunctionTest()
+{
+	VirtualFunction13* VirtualBase = new VirtualFunction_Derived13;
+	VirtualBase->baseMethod();
+	//VirtualBase->
+	delete VirtualBase;
+
+}
+
+
+
 
 int main()
 {
 	//CallbyTest();
 	//MirrorStringTest();
 	//SumViaClass();
-	VirtualDestructorTest();
+	//VirtualDestructorTest();
+	//PointAndRefTest();
+	VirtualFunctionTest();
+
+
+
+
+
+
+
+
+	Class3 c3(6);
+	cout << c3 << endl;
+
 
 
 	float a = 3.f;

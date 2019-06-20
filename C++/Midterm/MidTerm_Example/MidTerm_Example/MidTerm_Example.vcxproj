@@ -157,6 +157,9 @@
     <ClCompile Include="Exam1_derived1.cpp" />
     <ClCompile Include="Exam1_derived2.cpp" />
     <ClCompile Include="Exam1_Class3.cpp" />
+    <ClCompile Include="Exam1_PointAndRef15.cpp" />
+    <ClCompile Include="Exam1_VirtualFunction13.cpp" />
+    <ClCompile Include="Exam1_VirtualFunction_Derived13.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +169,9 @@
     <ClInclude Include="Exam1_derived1.h" />
     <ClInclude Include="Exam1_derived2.h" />
     <ClInclude Include="Exam1_Class3.h" />
+    <ClInclude Include="Exam1_PointAndRef15.h" />
+    <ClInclude Include="Exam1_VirtualFunction13.h" />
+    <ClInclude Include="Exam1_VirtualFunction_Derived13.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
