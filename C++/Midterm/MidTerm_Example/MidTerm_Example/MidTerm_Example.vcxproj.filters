@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\WritingSource">
+      <UniqueIdentifier>{ee831c52-08ed-4242-bfff-34712a196477}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\WritingHeader">
+      <UniqueIdentifier>{28065cd9-46c2-4ce6-9f84-9e0ccbbe2508}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\WritingTest">
+      <UniqueIdentifier>{017d0157-9d8c-41f3-8927-e6c3f3a619e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Exam1_derived1.cpp">
@@ -45,6 +54,9 @@
     <ClCompile Include="Exam1_VirtualFunction_Derived13.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Exam1_CopyAssign_ex.cpp">
+      <Filter>소스 파일\WritingSource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exam1_base.h">
@@ -74,5 +86,22 @@
     <ClInclude Include="Exam1_VirtualFunction_Derived13.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Exam1_CopyAssign_ex.h">
+      <Filter>헤더 파일\WritingHeader</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Writing-coutFormatting_1.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-CopyAndAssign_4.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-PointerAndReference_2.txt">
+      <Filter>리소스 파일</Filter>
+    </Text>
+    <Text Include="Writing-ShallowDeepCopy_3.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
   </ItemGroup>
 </Project>

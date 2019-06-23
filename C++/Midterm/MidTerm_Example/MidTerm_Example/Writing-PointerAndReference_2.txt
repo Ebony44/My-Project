@@ -1,0 +1,51 @@
+// call by value
+
+void Swap(int arg1, int arg2)
+{
+	int temp = arg1;
+	arg1 = arg2;
+	arg2 = temp;
+}
+
+int main()
+{
+	int num1 = 10;
+	int num2 = 20;
+	Swap(num1, num2);
+
+}
+
+
+// call by reference
+
+// primitive
+
+void Swap(int* arg1, int* arg2)
+{
+	int temp = *arg1;
+	*arg1 = *arg2;
+	*arg2 = temp;
+}
+
+int main()
+{
+	int num1 = 10;
+	int num2 = 20;
+	Swap(&num1, &num2);
+
+}
+
+// object
+
+void Increase(MyArgument* argument)
+{
+	argument->mNumber = argument->mNumber + 1;
+
+}
+
+int main()
+{
+	MyArgument argument;
+	argument.mNumber = 100;
+	Increase(&argument);
+}

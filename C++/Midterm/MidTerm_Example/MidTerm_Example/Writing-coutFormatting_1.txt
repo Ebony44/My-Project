@@ -1,0 +1,25 @@
+int main()
+{
+	// 0. #include <iomanip>
+	// 1. hex dec oct
+	// 1.1. showbase, noshowbase
+
+	// 1.2. if float, fixed, scientific
+	// 1.2.1. precision.
+
+	// 2. setw, setfill
+	// 3. left, internal, right
+
+
+
+	// thing i forget
+	// boolalpha and noboolalpha
+	// showpos and noshowpos
+	// uppercase and nouppercase
+	// showpoint and noshowpoint
+
+	// setprecision ->
+
+
+
+}
