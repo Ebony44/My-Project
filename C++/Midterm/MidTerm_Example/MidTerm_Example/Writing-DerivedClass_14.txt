@@ -1,0 +1,113 @@
+// BaseClass.h
+
+#pragma once
+namespace midterm
+{
+	class BaseClass
+	{
+	public:
+		BaseClass(int x);
+		BaseClass(const BaseClass& other);
+		virtual ~BaseClass();
+		
+		BaseClass& operator=(const BaseClass& rhs);
+		// something
+	protected:
+		// something
+	private:
+		// something
+	};
+}
+
+
+
+// BaseClass.cpp
+
+#include "BaseClass.h"
+
+namespace midterm
+{
+	BaseClass::BaseClass(int x)
+		: //something member variables
+	{
+	}
+	BaseClass::BaseClass(const BaseClass& other)
+		: //something from copied
+	{
+	}
+	BaseClass::~BaseClass()
+	{
+		// delete something pointer, heap allocated
+	}
+	BaseClass::operator=(const BaseClass& rhs)
+	{
+		if (this != &rhs)
+		{
+			// delete, new, and copy
+		}
+
+		return *this;
+	}
+
+}
+
+
+// DerivedClass.h
+
+#pragma once
+
+namespace midterm
+{
+	class DerivedClass : public BaseClass
+	{
+	public:
+		DerivedClass(float y);
+		DerivedClass(const DerivedClass& other);
+		virtual ~DerivedClass();
+
+		DerivedClass& operator=(const DerivedClass& rhs);
+	private:
+		// something member
+
+
+	};
+}
+
+
+
+//DerivedClass.cpp
+
+#include "DerivedClass.h"
+
+namesppace midterm
+{
+	DerivedClass::DerivedClass(float y)
+		: BaseClass(x)
+		, // something member
+	{
+	}
+
+	DerivedClass::DerivedClass(const DerivedClass& other)
+		: BaseClass(other.mX)
+		, // something member copying
+	{
+	}
+	DerivedClass::~DerivedClass()
+	{
+	}
+
+	DerivedClass::operator=(const DerivedClass& rhs)
+		: BaseClass(rhs.mX)
+	{
+		if (this != &rhs)
+		{
+			// delete, new, copying
+
+		}
+
+		return *this;
+	}
+
+
+}
+

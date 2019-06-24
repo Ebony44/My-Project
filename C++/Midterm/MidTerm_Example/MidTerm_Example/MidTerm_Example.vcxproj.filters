@@ -57,6 +57,9 @@
     <ClCompile Include="Exam1_CopyAssign_ex.cpp">
       <Filter>소스 파일\WritingSource</Filter>
     </ClCompile>
+    <ClCompile Include="Exam1_GlobalMethod_ex.cpp">
+      <Filter>소스 파일\WritingSource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exam1_base.h">
@@ -89,6 +92,9 @@
     <ClInclude Include="Exam1_CopyAssign_ex.h">
       <Filter>헤더 파일\WritingHeader</Filter>
     </ClInclude>
+    <ClInclude Include="Exam1_GlobalMethod_ex.h">
+      <Filter>헤더 파일\WritingHeader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Writing-coutFormatting_1.txt">
@@ -97,10 +103,16 @@
     <Text Include="Writing-CopyAndAssign_4.txt">
       <Filter>리소스 파일\WritingTest</Filter>
     </Text>
-    <Text Include="Writing-PointerAndReference_2.txt">
-      <Filter>리소스 파일</Filter>
-    </Text>
     <Text Include="Writing-ShallowDeepCopy_3.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-PointerAndReference_2.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-DerivedClass_14.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-Polymorphism_5.txt">
       <Filter>리소스 파일\WritingTest</Filter>
     </Text>
   </ItemGroup>

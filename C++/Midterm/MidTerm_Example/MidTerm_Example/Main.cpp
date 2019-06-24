@@ -34,12 +34,15 @@ using namespace std;
 
 //friend ostream& std::ostream::operator<<(std::ostream& os, const Class3& rhs)
 
+/*
 std::ostream& operator<<(std::ostream& stream, const Class3& other)
 {
 	
 	stream << other.GetX() << endl;
 	return stream;
 }
+*/
+
 
 
 //friend void std::cout operator<<()
@@ -149,20 +152,17 @@ int main()
 
 
 
-
-
-
-
-
 	Class3 c3(6);
-	cout << c3 << endl;
+	//cout << c3 << endl;
 
 
 
 	float a = 3.f;
-	cout << bitset<32>(a) << endl;
+	//cout << bitset<32>(a) << endl;
+	cout << a << endl;
 	int b = static_cast<int>(a);
-	cout << bitset<32>(b) << endl;
+	//cout << bitset<32>(b) << endl;
+	cout << b << endl;
 
 
 

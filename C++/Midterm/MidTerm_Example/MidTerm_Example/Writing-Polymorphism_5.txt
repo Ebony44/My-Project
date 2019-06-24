@@ -1,0 +1,9 @@
+1. what is polymorphism
+	same aspect(style), different 
+
+
+2. where should it used
+
+3. how can polymorph
+
+4. 

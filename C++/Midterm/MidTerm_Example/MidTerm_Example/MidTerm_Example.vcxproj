@@ -158,6 +158,7 @@
     <ClCompile Include="Exam1_derived1.cpp" />
     <ClCompile Include="Exam1_derived2.cpp" />
     <ClCompile Include="Exam1_Class3.cpp" />
+    <ClCompile Include="Exam1_GlobalMethod_ex.cpp" />
     <ClCompile Include="Exam1_PointAndRef15.cpp" />
     <ClCompile Include="Exam1_VirtualFunction13.cpp" />
     <ClCompile Include="Exam1_VirtualFunction_Derived13.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Exam1_derived1.h" />
     <ClInclude Include="Exam1_derived2.h" />
     <ClInclude Include="Exam1_Class3.h" />
+    <ClInclude Include="Exam1_GlobalMethod_ex.h" />
     <ClInclude Include="Exam1_PointAndRef15.h" />
     <ClInclude Include="Exam1_VirtualFunction13.h" />
     <ClInclude Include="Exam1_VirtualFunction_Derived13.h" />
@@ -178,7 +180,9 @@
   <ItemGroup>
     <Text Include="Writing-CopyAndAssign_4.txt" />
     <Text Include="Writing-coutFormatting_1.txt" />
+    <Text Include="Writing-DerivedClass_14.txt" />
     <Text Include="Writing-PointerAndReference_2.txt" />
+    <Text Include="Writing-Polymorphism_5.txt" />
     <Text Include="Writing-ShallowDeepCopy_3.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
