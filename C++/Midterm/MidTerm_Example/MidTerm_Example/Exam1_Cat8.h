@@ -12,7 +12,7 @@ namespace midterm
 	public:
 		Cat8(const char* name);
 		~Cat8();
-		virtual void PrintName() const;
+		void PrintName() const;
 
 
 	};

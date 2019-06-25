@@ -138,18 +138,59 @@ void VirtualFunctionTest()
 
 }
 
+void Question1()
+{
+	
+}
+
+void Question4()
+{
+	float* x = new float(12.456f);
+	int* y = reinterpret_cast<int*>(x);
+
+	float* z = reinterpret_cast<float*>(y);
+
+	cout << *z << endl;
+}
+
+void Question8()
+{
+	Cat8* cat1 = new Cat8("Kitty");
+	//Cat8 cat2(*cat1);
+	delete cat1;
+	//cat2.PrintName();
+
+}
+
+
 
 
 
 int main()
 {
+	//baseDerivedTest1();
+
+	Question8();
+
+	//Question1();
 	//CallbyTest();
 	//MirrorStringTest();
 	//SumViaClass();
 	//VirtualDestructorTest();
 	//PointAndRefTest();
-	VirtualFunctionTest();
+	//VirtualFunctionTest();
 
+	int* numberTest = new int(5);
+	//delete numberTest;
+
+
+
+	const char* text = "Hello, world";
+	std::cout.operator<<(text) << endl;
+	std::cout.operator<<(text);
+	//std::operator<<(text) 
+	cout << text << endl;
+	//delete text;
 
 
 	Class3 c3(6);
@@ -167,7 +208,7 @@ int main()
 
 
 
-
+	/*
 	queue<std::string> studentNameQueue;
 	studentNameQueue.push("Coco");
 	studentNameQueue.push("Mocha");
@@ -188,21 +229,22 @@ int main()
 		studentNameStack.pop();
 		
 	}
+	*/
 
 
 
-
+	/*
 	size_t sz = 4;
 
 	while (sz-- >= 0)
 	{
 		cout << sz << endl;
 	}
+	*/
 
 	// 1. cout formatting
 	// 2. Pointer and Reference
 	// 3. 
-
 
 
 

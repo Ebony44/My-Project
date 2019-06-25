@@ -1,0 +1,15 @@
+// 
+
+
+
+1. static_cast
+
+	it will modify binary
+	for value
+
+
+2. reinterpret_cast
+
+	it interpret the data as it is
+	
+	

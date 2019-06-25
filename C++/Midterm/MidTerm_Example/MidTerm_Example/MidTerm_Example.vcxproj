@@ -181,9 +181,15 @@
     <Text Include="Writing-CopyAndAssign_4.txt" />
     <Text Include="Writing-coutFormatting_1.txt" />
     <Text Include="Writing-DerivedClass_14.txt" />
+    <Text Include="Writing-OperatorOverloading_9.txt" />
     <Text Include="Writing-PointerAndReference_2.txt" />
     <Text Include="Writing-Polymorphism_5.txt" />
     <Text Include="Writing-ShallowDeepCopy_3.txt" />
+    <Text Include="Writing-StaticCastVersusReinterpretCast_10.txt" />
+    <Text Include="Writing-StaticVariable_11.txt" />
+    <Text Include="Writing-VirtualClass_8.txt" />
+    <Text Include="Writing-VirtualDestructor_7.txt" />
+    <Text Include="Writing-VirtualFunction_6.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

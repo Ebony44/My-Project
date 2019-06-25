@@ -1,0 +1,10 @@
+Static Variable
+
+It's most likely limited by scope
+
+in C, there is extern keyword so it can be used externally (referencing that outside variable)
+
+
+1. only 1 instance for that static. it's obvious
+
+2. it's global, the place where the call stand isn't matter.

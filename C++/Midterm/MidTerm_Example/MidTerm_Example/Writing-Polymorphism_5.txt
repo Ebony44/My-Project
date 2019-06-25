@@ -1,9 +1,26 @@
 1. what is polymorphism
-	same aspect(style), different 
+	same aspect(style), different function
+	(not name, if so, there is confusion between overload and override)
+
+
 
 
 2. where should it used
+	inheritance -> and re-defined the detailed function
+	like
+	animal -> cat, dog,....etc
+	vehicle -> airplane, boat, motorcycle...
+
+	then their action must be different to each others.
+
 
 3. how can polymorph
-
+	method overriding
+	1. Methods name and signatures must be same
+	2. Overriding is the concept of run-time
+	3. When a function of base class is re-defined in the derived class called as overriding
+	4. it needs inheritance
+	5. method should have same data type
+	6. method should be public.
+	
 4. 

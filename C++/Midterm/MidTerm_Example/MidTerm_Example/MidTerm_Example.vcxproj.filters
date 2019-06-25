@@ -115,5 +115,23 @@
     <Text Include="Writing-Polymorphism_5.txt">
       <Filter>리소스 파일\WritingTest</Filter>
     </Text>
+    <Text Include="Writing-VirtualFunction_6.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-VirtualDestructor_7.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-VirtualClass_8.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-OperatorOverloading_9.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-StaticCastVersusReinterpretCast_10.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-StaticVariable_11.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
   </ItemGroup>
 </Project>
