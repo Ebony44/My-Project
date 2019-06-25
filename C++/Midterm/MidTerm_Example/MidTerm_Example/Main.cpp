@@ -151,6 +151,16 @@ void Question4()
 	float* z = reinterpret_cast<float*>(y);
 
 	cout << *z << endl;
+
+	float i = 12.456f;
+	int j = static_cast<int>(i);
+
+	float k = static_cast<float>(j);
+
+	cout << k << endl;
+
+
+
 }
 
 void Question8()
@@ -162,7 +172,14 @@ void Question8()
 
 }
 
+void Question9()
+{
+	float a = 3.f;
+	int b = static_cast<int>(a);
+	int c = 1;
+	float d = *reinterpret_cast<float*>(&c);
 
+}
 
 
 
@@ -170,7 +187,8 @@ int main()
 {
 	//baseDerivedTest1();
 
-	Question8();
+	//Question4();
+	Question9();
 
 	//Question1();
 	//CallbyTest();
@@ -191,6 +209,8 @@ int main()
 	//std::operator<<(text) 
 	cout << text << endl;
 	//delete text;
+
+	char* anotherText = new char('a');
 
 
 	Class3 c3(6);

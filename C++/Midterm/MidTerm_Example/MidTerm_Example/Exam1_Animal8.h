@@ -8,7 +8,7 @@ namespace midterm
 	{
 	public:
 		Animal8(const char* name);
-		~Animal8();
+		virtual ~Animal8();
 		virtual void PrintName() const = 0;
 	protected:
 		const char* mName;
