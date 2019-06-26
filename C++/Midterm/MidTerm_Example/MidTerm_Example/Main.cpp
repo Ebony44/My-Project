@@ -3,7 +3,10 @@
 
 
 #include <bitset>
+
 #include <string>
+
+
 
 #include <iomanip>
 #include <iostream>
@@ -143,6 +146,15 @@ void Question1()
 	
 }
 
+void Question3()
+{
+	Class3 c1(2);
+	Class3 c2(3);
+	Class3 sum = c1 + c2;
+
+	cout << sum.GetX() << endl;
+}
+
 void Question4()
 {
 	float* x = new float(12.456f);
@@ -162,13 +174,24 @@ void Question4()
 
 
 }
+void Question7()
+{
+	string line = "What";
+	line += "up";
+	line += MirrorString(line) + "bro";
+	cout << line << endl;
+}
 
 void Question8()
 {
-	Cat8* cat1 = new Cat8("Kitty");
+	//Cat8* cat1 = new Cat8("Kitty");
 	//Cat8 cat2(*cat1);
-	delete cat1;
+	//delete cat1;
 	//cat2.PrintName();
+
+	Cat8 cat("kitty");
+	std::cout << cat << std::endl;
+
 
 }
 
@@ -181,14 +204,84 @@ void Question9()
 
 }
 
+void Question11()
+{
+	std::string str1("Java");
+	std::string str2("Java");
+
+	bool bEqual = (str1 == str2);
+
+	bEqual = (str1.c_str() == str2.c_str());
+
+}
+
+class Vector
+{
+public:
+	int mX;
+	int mY;
+
+};
+Vector operator*(Vector&v, int x)
+{
+	Vector a;
+	a.mX = v.mX * x;
+	a.mY = v.mY * x;
+	return a;
+}
+Vector operator/(Vector& v, float x)
+{
+	Vector a;
+	a.mX = v.mX / x;
+	a.mY = v.mY / x;
+	return a;
+}
+
+void Question12()
+{
+	Vector v1;
+	v1.mX = 1;
+	v1.mY = 2;
+
+	Vector v2 = v1 * 2;
+
+	std::cout << v2.mX << std::endl;
+
+	v2 = v1 / 2.f;
+	std::cout << v2.mY << std::endl;
+
+
+}
+
+void Question14()
+{
+	VirtualFunction13* VirtualBase = new VirtualFunction_Derived13;
+	VirtualBase->baseMethod();
+	//VirtualBase->
+	delete VirtualBase;
+
+}
 
 
 int main()
 {
+	
 	//baseDerivedTest1();
 
+
+	//Question3();
 	//Question4();
-	Question9();
+	//Question7();
+	//Question8();
+	//Question9();
+
+	//Question11();
+
+	//Question12();
+	Question14();
+	
+
+
 
 	//Question1();
 	//CallbyTest();
@@ -197,6 +290,7 @@ int main()
 	//VirtualDestructorTest();
 	//PointAndRefTest();
 	//VirtualFunctionTest();
+
 
 	int* numberTest = new int(5);
 	//delete numberTest;

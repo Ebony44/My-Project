@@ -99,7 +99,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
@@ -178,15 +178,21 @@
     <ClInclude Include="Exam1_VirtualFunction_Derived13.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Writing-AccessModifier_16.txt" />
     <Text Include="Writing-CopyAndAssign_4.txt" />
     <Text Include="Writing-coutFormatting_1.txt" />
     <Text Include="Writing-DerivedClass_14.txt" />
+    <Text Include="Writing-Extra_ex.txt" />
+    <Text Include="Writing-InlineVersusMacro_12.txt" />
     <Text Include="Writing-OperatorOverloading_9.txt" />
+    <Text Include="Writing-OrderOfConstructorAndDestructor_17.txt" />
     <Text Include="Writing-PointerAndReference_2.txt" />
     <Text Include="Writing-Polymorphism_5.txt" />
     <Text Include="Writing-ShallowDeepCopy_3.txt" />
+    <Text Include="Writing-StackVersusHeap_13.txt" />
     <Text Include="Writing-StaticCastVersusReinterpretCast_10.txt" />
     <Text Include="Writing-StaticVariable_11.txt" />
+    <Text Include="Writing-StringClass_15.txt" />
     <Text Include="Writing-VirtualClass_8.txt" />
     <Text Include="Writing-VirtualDestructor_7.txt" />
     <Text Include="Writing-VirtualFunction_6.txt" />

@@ -1,0 +1,9 @@
+1. Order of Constructor
+
+	always base class first, if multiple inheritance, order of inheritance comes up.
+	then, derived class' constructor
+
+2. Order of Destructor
+	
+	counterwise of constructor's order
+	

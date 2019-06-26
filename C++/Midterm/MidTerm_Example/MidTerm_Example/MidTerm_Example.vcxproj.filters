@@ -133,5 +133,23 @@
     <Text Include="Writing-StaticVariable_11.txt">
       <Filter>리소스 파일\WritingTest</Filter>
     </Text>
+    <Text Include="Writing-Extra_ex.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-StackVersusHeap_13.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-InlineVersusMacro_12.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-StringClass_15.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-AccessModifier_16.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Writing-OrderOfConstructorAndDestructor_17.txt">
+      <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
   </ItemGroup>
 </Project>

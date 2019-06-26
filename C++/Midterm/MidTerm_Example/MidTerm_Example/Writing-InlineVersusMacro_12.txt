@@ -1,0 +1,17 @@
+1. Inline
+	- worked by compiler
+		inline functions are parsed by compiler
+	- defined inside or outside the class
+
+	- The compiler may not inline and expand all the functions
+
+	- An inline member function can access the data members of the class.
+	
+2. Macro
+	- worked by preprocessor
+		the macros are expanded by preprocessor
+	- always defined a the start of the program
+
+	- Macros are always expanded 
+
+	- Macros can never be the members of the class and can not access the data members of the class.

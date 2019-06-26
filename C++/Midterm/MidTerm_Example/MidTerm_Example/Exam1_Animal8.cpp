@@ -10,7 +10,7 @@ namespace midterm
 
 	Animal8::~Animal8()
 	{
-		delete[] mName;
+		//delete[] mName;
 		/*
 		for (unsigned int i = 0; i < strlen(mName); i++)
 		{

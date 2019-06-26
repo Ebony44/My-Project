@@ -1,0 +1,20 @@
+1. Stack
+
+	- it pre-defined at compile-time
+
+	- Generally, lower than 1MB
+
+	- when processing, Stack pointer is moving. so it's faster than Heap
+
+
+
+
+
+2. Heap
+
+	- will see the memory in run-time
+
+	- Generally, it's size is bigger than Stack.
+
+	- slower than Stack, because of multiple process of jumping
+

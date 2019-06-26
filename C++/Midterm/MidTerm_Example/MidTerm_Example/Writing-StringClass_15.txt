@@ -1,0 +1,13 @@
+std::string
+
+1. the capacity of string can be dynamically changed
+2. operator== already overloaded. it compare 2 strings' values -> not addresss
+3. 
+
+
+4. methods
+	size(), length()
+		get strings' size, length(both are same.)
+
+	c_str()
+		return pointer to the c-string representation of the string object's value

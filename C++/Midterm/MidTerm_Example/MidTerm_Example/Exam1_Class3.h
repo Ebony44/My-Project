@@ -9,7 +9,7 @@ namespace midterm
 		virtual ~Class3();
 		Class3 operator+(const Class3& other);
 
-		inline int GetX() const;
+		int GetX() const;
 	private: 
 		int mX;
 	};

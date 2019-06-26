@@ -2,7 +2,7 @@
 
 void midterm::VirtualFunction_Derived13::method()
 {
-	std::cout << "from base" << std::endl;
+	std::cout << "from A" << std::endl;
 }
 
 midterm::VirtualFunction_Derived13::~VirtualFunction_Derived13()

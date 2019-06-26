@@ -17,6 +17,13 @@ namespace midterm
 
 	}
 
+	std::ostream& operator<<(std::ostream& os, const Cat8& cat)
+	{
+		os << cat.mName << std::endl;
+
+		return os;
+	}
+
 }
 
 

@@ -1,0 +1,14 @@
+1. what is Shallow and Deep Copy
+	- take the address' value and copy this and store it for later use.
+
+
+2. where should it be used
+	- when give and take pointer in and out of the class.
+
+
+3. how can it be implemented
+	- with copy constructor and assing operator
+
+4. why is it necessary?
+	- without this concept, it will delete multiple time which lead to runtime error(access to NULL pointer which is already deleted)
+	
