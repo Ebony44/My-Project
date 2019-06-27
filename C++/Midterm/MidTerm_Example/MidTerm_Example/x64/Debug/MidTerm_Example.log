@@ -1,4 +1,14 @@
-﻿  Exam1_VirtualFunction_Derived13.cpp
+﻿  Exam1_Animal8.cpp
+  Exam1_base.cpp
+  Exam1_Cat8.cpp
+  Exam1_CopyAssign_ex.cpp
+  Exam1_derived1.cpp
+  Exam1_derived2.cpp
+  Exam1_Class3.cpp
+  Exam1_GlobalMethod_ex.cpp
+  Exam1_PointAndRef15.cpp
+  Exam1_VirtualFunction13.cpp
+  Exam1_VirtualFunction_Derived13.cpp
   Main.cpp
 c:\users\timun\documents\my-project\c++\midterm\midterm_example\midterm_example\main.cpp(91): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 c:\users\timun\documents\my-project\c++\midterm\midterm_example\midterm_example\main.cpp(235): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.

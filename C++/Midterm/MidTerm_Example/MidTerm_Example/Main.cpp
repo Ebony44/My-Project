@@ -265,7 +265,9 @@ void Question14()
 
 int main()
 {
-	
+	cout << dec << internal << setw(15)  << setfill('*') << 14 << endl;
+	cout << setw(25) << setfill('&') << internal <<  "  white  space " << endl;
+
 	//baseDerivedTest1();
 
 

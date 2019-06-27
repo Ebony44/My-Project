@@ -22,7 +22,7 @@ namespace midterm
 		int mX;
 		const char* mName[CHAR_MAX_SIZE];
 		
-	}
+	};
 }
 
 

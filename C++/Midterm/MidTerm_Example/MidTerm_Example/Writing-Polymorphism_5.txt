@@ -24,4 +24,5 @@
 	6. method should be public.
 	
 4. why is it needed
-	
+	make class everytime which related base class, no need to implement same method, member variables...etc
+	remember, same aspect, different function

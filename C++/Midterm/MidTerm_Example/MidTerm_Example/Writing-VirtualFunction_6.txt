@@ -4,7 +4,7 @@
 // 1.1 it has it's own method and member
 
 // 2. Interface
-// 2.1. no member function and method are highly recommended
+// 2.1. no member functions and methods are highly recommended
 
 
 

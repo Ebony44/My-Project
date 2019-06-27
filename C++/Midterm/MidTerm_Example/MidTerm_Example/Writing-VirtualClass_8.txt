@@ -1,0 +1,16 @@
+Virtual Class
+
+1. used in virtual inheritance in a way of preventing multiple "instances" of a given class.
+
+2. 
+
+
+Abstract Class
+
+1. contains one or more Abstract method
+
+2. Syntax
+virtual MethodName(Param param) = 0;
+
+3. 
+

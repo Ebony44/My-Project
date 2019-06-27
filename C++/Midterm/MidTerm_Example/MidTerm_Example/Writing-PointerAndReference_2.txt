@@ -1,3 +1,26 @@
+// Reference
+
+int main()
+{
+
+	int a = 100;
+	int b = 200;
+
+	swap(a, b);
+
+	//now a is 200, b is 100...
+}
+void Swap(int& x, int& y)
+{
+	int temp;
+
+	temp = x;
+	x = y;
+	y = temp;
+}
+
+
+
 // call by value
 
 void Swap(int arg1, int arg2)
