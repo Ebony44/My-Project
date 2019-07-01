@@ -24,6 +24,8 @@
 #include "Exam1_Animal8.h"
 #include "Exam1_Cat8.h"
 
+#include "Exam1_StaticVariables10.h"
+
 #include "Exam1_VirtualFunction13.h"
 #include "Exam1_VirtualFunction_Derived13.h"
 
@@ -49,8 +51,38 @@ std::ostream& operator<<(std::ostream& stream, const Class3& other)
 
 
 //friend void std::cout operator<<()
+/*
+void TestofTestofTest()
+{
+	//cstyle
+	char* mBuffer;
+	int p = 0;
+	int q = strlen(mBuffer) - 1;
+
+	while (p > q)
+	{
+		char temp = mBuffer[p];
+		mBuffer[p] = mBuffer[q];
+		mBuffer[q] = temp;
+		++p;
+		--q;
+	}
 
 
+	//string
+
+
+}
+std::string stringMirroring(const std::string& str)
+{
+	std::string temp;
+	for (int i = str.length() - 1; i >= 0; --i)
+	{
+		temp += str[i];
+	}
+	return temp;
+}
+*/
 void baseDerivedTest1()
 {
 
@@ -145,6 +177,10 @@ void Question1()
 {
 	
 }
+void Question2()
+{
+	std::cout << std::setw(15) << std::setfill('-') << std::internal << "Hello World";
+}
 
 void Question3()
 {
@@ -204,6 +240,15 @@ void Question9()
 
 }
 
+void Question10()
+{
+	Static10* s1 = new Static10();
+	Static10* s2 = new Static10();
+	std::cout << s1->GetCount() << endl;
+	delete s1;
+	delete s2;
+}
+
 void Question11()
 {
 	std::string str1("Java");
@@ -261,26 +306,35 @@ void Question14()
 	delete VirtualBase;
 
 }
+void Question14_ex()
+{
+	VirtualFunction13_2* virtualBase2 = new VirtualFunction_Derived13_2();
+
+}
 
 
 int main()
 {
-	cout << dec << internal << setw(15)  << setfill('*') << 14 << endl;
-	cout << setw(25) << setfill('&') << internal <<  "  white  space " << endl;
+
+	int* singedNumber = new int(-10);
+	unsigned int* unsignedNumber = reinterpret_cast<unsigned int*>(singedNumber);
+	//cout << dec << internal << setw(15)  << setfill('*') << 14 << endl;
+	//cout << setw(25) << setfill('&') << internal <<  "  white  space " << endl;
 
 	//baseDerivedTest1();
 
-
+	Question2();
 	//Question3();
 	//Question4();
 	//Question7();
-	//Question8();
+	Question8();
 	//Question9();
-
+	Question10();
 	//Question11();
 
 	//Question12();
 	Question14();
+	Question14_ex();
 	
 
 

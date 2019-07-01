@@ -4,5 +4,34 @@
 // should be able to writing class level and global level
 
 
+limition
+1. overloaded function should have at least one custom data type
 
 
+
+friend
+
+	-like Getter and Setter
+	but no one but class can access it.
+	(not like public)
+
+	and if it's declared in class, public or private isn't matter...there is no meaning.
+
+	friend <returnType> <methodName>(Param param);
+
+	friend std::ostream& operator<<(std::ostream& os, const Vector vs);
+	std::ostream& operator<<(const std::ostream& os, Vector vs)
+	{
+		
+	}
+
+	<returnType> <methodName>(Param param)
+	{
+		// do something
+	}
+
+
+const
+
+	- if LHS value changed -> no const on end.
+	- need to chaining -> no const on start(return value)

@@ -12,3 +12,29 @@
 4. why is it necessary?
 	- without this concept, it will delete multiple time which lead to runtime error(access to NULL pointer which is already deleted)
 	
+
+	/h
+	class Foo
+	{
+	public:
+		Foo();
+		Foo(const Foo& other);
+		Foo& operator=(const Foo& rhs);
+		virtual ~Foo();
+
+	private:
+	};
+
+	//cpp
+	Foo:Foo()
+	{
+	}
+	Foo:Foo(const Foo& other)
+	{
+	}
+	virtual Foo::~Foo()
+	{
+	}
+	Foo& Foo::operator=(const Foo& rhs)
+	{
+	}

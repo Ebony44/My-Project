@@ -160,6 +160,7 @@
     <ClCompile Include="Exam1_Class3.cpp" />
     <ClCompile Include="Exam1_GlobalMethod_ex.cpp" />
     <ClCompile Include="Exam1_PointAndRef15.cpp" />
+    <ClCompile Include="Exam1_StaticVariables10.cpp" />
     <ClCompile Include="Exam1_VirtualFunction13.cpp" />
     <ClCompile Include="Exam1_VirtualFunction_Derived13.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="Exam1_Class3.h" />
     <ClInclude Include="Exam1_GlobalMethod_ex.h" />
     <ClInclude Include="Exam1_PointAndRef15.h" />
+    <ClInclude Include="Exam1_StaticVariables10.h" />
     <ClInclude Include="Exam1_VirtualFunction13.h" />
     <ClInclude Include="Exam1_VirtualFunction_Derived13.h" />
   </ItemGroup>

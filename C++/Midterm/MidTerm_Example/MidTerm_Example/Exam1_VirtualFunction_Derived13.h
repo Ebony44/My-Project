@@ -18,4 +18,12 @@ namespace midterm
 		
 
 	};
+
+	class VirtualFunction_Derived13_2 : public VirtualFunction13_2
+	{
+		void method();
+	public:
+		VirtualFunction_Derived13_2();
+		virtual ~VirtualFunction_Derived13_2();
+	};
 }

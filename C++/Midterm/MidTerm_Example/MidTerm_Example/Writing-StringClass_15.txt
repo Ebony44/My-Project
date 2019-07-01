@@ -11,3 +11,32 @@ std::string
 
 	c_str()
 		return pointer to the c-string representation of the string object's value
+
+
+c style mirror
+
+string mirror
+
+void CStyleMirror(char* string)
+{
+	p = 0
+	q = mBuffer - 1;
+	while (p < q)
+	{
+		char temp = mBuffer[p];
+		mBuffer[p] = mBuffer[q];
+		mBuffer[q] = temp;
+
+		++p;
+		--q;
+	}
+}
+std::string StringMirror(std::string string)
+{
+	std:string tempStr;
+	for (int i=strlen(string) - 1; i >=0; --i)
+	{
+		tempStr += string[i];
+	}
+	return tempStr;
+}

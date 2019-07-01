@@ -22,6 +22,9 @@
 	4. it needs inheritance
 	5. method should have same data type
 	6. method should be public.
+
+	virtual void Speak();
+
 	
 4. why is it needed
 	make class everytime which related base class, no need to implement same method, member variables...etc

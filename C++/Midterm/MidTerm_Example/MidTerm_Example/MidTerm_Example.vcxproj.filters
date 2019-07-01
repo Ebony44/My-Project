@@ -60,6 +60,9 @@
     <ClCompile Include="Exam1_GlobalMethod_ex.cpp">
       <Filter>소스 파일\WritingSource</Filter>
     </ClCompile>
+    <ClCompile Include="Exam1_StaticVariables10.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exam1_base.h">
@@ -94,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="Exam1_GlobalMethod_ex.h">
       <Filter>헤더 파일\WritingHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="Exam1_StaticVariables10.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

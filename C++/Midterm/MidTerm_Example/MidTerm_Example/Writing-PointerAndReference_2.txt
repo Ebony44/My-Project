@@ -1,5 +1,18 @@
 // Reference
 
+
+1. can't be NULL
+2. must be declared when initializing
+3. it's just another name, nickname..
+
+Pros
+
+1. can't be NULL -> there is no nullptr. unlike pointer... it's valid
+2. can't be access the memory that we don't own
+
+
+
+
 int main()
 {
 
