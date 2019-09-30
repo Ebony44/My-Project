@@ -1,0 +1,115 @@
+- iterator
+
+반복자는 포인터다
+반복자는 포인터다
+반복자는 포인터다
+
+
+begin()
+end()
+
+rbegin()
+rend()
+
+-> 역방향
+
+
+cbegin()
+cend()
+
+->const begin과 const end
+
+ 개체 벡터
+
+ void PrintVector(const vector<Score>& scores)
+ {
+	for(vector<score>::const_iterator iter = scores.begin(); iter != scores.end(); ++iter)
+	{
+		iter->PrintVariables();
+	}
+	cout << endl;
+ }
+
+ 포인터 벡터
+
+void PrintVector(const vector<Score*>& scores)
+{
+	for(vector<Score*>::const_iterator iter = scores.begin(); iter != scores.end(); iter++)
+	{
+		Score* score = *iter;
+		// 이렇게 안 쓰면 아래 코드는
+		// (*iter)->PrintVariables(); 요런식으로 쓰게 되서 더럽.
+		score->PrintVariables();
+
+	}
+	cout << endl;
+}
+
+
+
+
+
+
+- STL algorithm
+
+1. ex) std::copy
+
+#include <algorithm>
+
+// ..
+int main()
+{
+	std::vector<int> scores;
+	scores.push_back(10);
+	scores.push_back(70);
+	scores.push_back(80);
+
+	std::vector<int> copiedScores;
+	copiedScores.resize(scores.size());
+	
+
+	std::copy(scores.begin(), scores.end(), copiedScores.begin() );
+	// begin부터 end까지, for문으로 iterator를 돌릴 때와 마찬가지로 여기서도 end는 카피하지 않는다. 
+
+
+}
+
+_OutIt
+
+// _ 이 밑줄표시는 템플릿 구현에서만 쓰려고 만든 것임을 의미.
+
+
+const iterator
+reverse iterator
+
+- STL 알고리듬
+
+-- 요소 범위에서 쓸 수 있는 함수들
+-- 배열 또는 몇몇 STL 컨테이너에서 사용 가능
+-- "반복자"를 통해 컨테이너에 접근
+-- 컨테이너의 크기를 변경하지 않음(추가 메모리 할당도 없음)
+
+#include <algorithm>
+
+find()
+-> 맵 안에서 key를 찾았을 경우 대응하는 값 pair를 참조로 반환.
+-> 못 찾았을 경우 end()를 반환.
+
+for_each()
+
+copy()
+swap()
+
+sort()
+merge()
+
+accumulate() - #include <numeric>
+
+
+
+find() 알고리듬
+
+template<typename ITER, typename T>
+const ITER* find(const ITER* begin, const ITER* end, const T& value)
+{
+}

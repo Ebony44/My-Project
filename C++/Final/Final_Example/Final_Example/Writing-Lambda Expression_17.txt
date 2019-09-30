@@ -1,0 +1,90 @@
+- 람다 식
+
+-- 람다 식의 단점
+
+-> 함수 재사용성이 낮음
+-> 사람들은 보통 함수를 새로 만들기 전에 클래스에 있는 기존 함수를 찾아 봄
+-> 람다 함수는 눈에 잘 띄지 않아서 못 찾을 가능성이 높음
+-> 그럼 코드 중복이 발생...
+
+-- 베스트 프랙티스
+1. 기본적으로 이름이 있는 함수를 쓰자(전통적 방식)
+2. 자잘한 함수는 람다로 써도 괜찮다(1줄짜리 함수)
+3. 재사용할 수 있는 함수라면 1번 그렇지 않다면 2번
+4. 정렬 함수처럼 STL 컨테이너에 매개 변수로 전달할 함수들 같은 것도 2번에 해당한다고 볼 수 있음.
+
+
+void LambdaExpressionExample()
+{
+	int i = 0;
+	float f = 1.0f;
+	char c = 'b';
+
+	// 캡쳐한 것 없음. 아무것도 ..
+	auto noCapturing = []()
+	{
+		cout << "No capture:" << endl;
+
+		// Compile Error
+		// cout<< "i: " << i << endl;
+		// cout<< "f: " << f << endl;
+		// cout<< "c: " << c << endl;
+		
+
+	};
+
+	// 값을 받았기에 사용은 가능하나 수정은 불가능
+	auto capturedByValue = [=]()
+	{
+		cout << "Capture by value:" << endl;
+
+		cout<< "i: " << i << endl;
+		cout<< "f: " << f << endl;
+		cout<< "c: " << c << endl;
+
+		// Compile Error
+		// i++;
+		// f = 2.0f;
+		// c = 'a';
+
+	};
+	auto capturedByRef = [&]()
+	{
+		// 사용 가능, 수정 가능, 수정하면 원본이 바뀜.
+	};
+
+	auto capturedByVariableNames = [i, f]()
+	{
+		// 변수 이름에 의한(여전히 값에 의한) 캡쳐
+
+		cout << "Capture by variable names value:" << endl;
+
+		cout<< "i: " << i << endl;
+		cout<< "f: " << f << endl;
+
+		// Compile error
+		// cout<< "c: " << c << endl;
+		// i++;
+		// f++;
+	};
+
+	auto capturedByVariableNames = [&i, &f]()
+	{
+		// 변수 이름에 의한(참조에 의한) 캡쳐
+	};
+
+	auto capturedByVariableNames = [=, &f, &c]()
+	{
+		cout << "Capture by value by default, then by variable names reference:" << endl;
+
+		// Compile error
+		// i++;
+
+	};
+
+	auto capturedByValueMutable = [=]() mutable
+	{
+		// 값에 의한 캡쳐지만, 수정 가능, 하지만 원본이 변경되지 않는다.
+	};
+
+}

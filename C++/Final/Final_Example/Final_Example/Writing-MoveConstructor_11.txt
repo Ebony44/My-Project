@@ -1,0 +1,34 @@
+- 이동 생성자
+16번, lvalue, rvalue부터 보고 온다.
+
+-- rvalue 참조(&&)
+-> c++11 이후에 새로 나온 연산자
+-> 기능상 & 연산자와 비슷
+-> &연산자는 lvalue 참조에  사용
+-> &&연산자는 rvalue 참조에 사용
+
+
+
+
+Foo::Foo(Foo&& other)
+	: mSomeInt(other.mSomeInt)
+	, mString(other.mString)
+{
+	other.mSomeInt = 0;
+	other.mString = nullptr;
+}
+
+
+// Main.cpp
+
+int main()
+{
+	MyString studentName("Lulu");
+	MyString copiedName(std::move(studentName));
+}
+- 이동 생성자
+-> 다른 개체 멤버 변수들의 소유권을 가져옴
+-> 복사 생성자와 달리, 메모리 재할당을 하지 않음
+-> 복사 생성자보다 빠름
+-> 약간 얕은 복사와 비슷
+

@@ -1,0 +1,88 @@
+- lvalue and rvalue
+
+- lvalue
+-- 단일 식을 넘어 지속되는 개체
+	--- 주소가 있음
+	--- 이름이 있는 변수
+	--- const 변수
+	--- 배열 변수
+	--- 비트 필드
+	--- 공용 구조체
+	--- 클래스 멤버
+	--- 좌측 값 참조(&)로 반환하는 함수 호출
+	--- 문자열 리터럴
+	... 지금까지 봐온 많은 것들
+
+- rvalue
+-- lvalue가 아닌 개체...;;
+
+	--- 주소가 없는 개체
+	--- 리터럴(문자열 리터럴 제외)
+	--- 참조로 반환하지 않는 함수 호출
+	--- i++와 i--(++i와 --i는 lvalue이다...)
+	--- 기본으로 지원되는 산술식, 논리식, 비교식
+	--- 열거형(enum)
+	--- 람다(lambda)
+
+
+-- rvalue Example
+int number = 10			// 10은 rvalue
+10 = number				// 에러
+(number + 1) = 20;		// 에러 (number +1)은 rvalue이기 때문 *************
+
+int anotherNumber = 20;
+int result = number + anotherNumber		// OK, 그리고 number + anotherNumber는 rvalue
+
+&number = 20;							// 에러, &number는 rvalue
+
+int number1 = 10;
+int number2 = 20;
+if (number1 < number2)					// number1 < number2는 rvalue
+{
+	// code
+}
+
+
+- lvalue, rvalue 개념을 구분하고 나오게 된 배경?
+// Math.cpp
+std::vector<float> Math::ConvertToPercentage(const std::vector<float>& scores)
+{
+	std::vector<float> percentages;
+	for(std::vector<float>::const_iterator it = scores.begin(); it != scores.end(); ++it)
+	{
+		// codes
+	}
+
+	return percentages;								// 복사 1번째
+
+}
+// Main.cpp
+#include "Math.h"
+
+int main()
+{
+	std::vector <float> scores;
+	// ..
+	scores = ConvertToPercentage(scores);			// 복사 2번째
+	// ...
+}
+
+
+ -> 2번의 복사가 일어난다... 만약 매개변수로 받은 scores라는 벡터에 저장된 값이 너무 크고 많다면
+ 이를 일일이 2번 복사하고 앉아있어야 하는지?
+
+
+
+ - std::move()
+ -> rvalue 참조를 반환
+ -> lvalue를 rvalue로 변환
+
+
+ - rvalue 최적화
+ -> 함수에서 rvalue를 반환하는 것은 실제로 매우 느리다!!!
+ -> 반환 값 최적화RVO(Return Value Optimization)라고 하는 컴파일러 최적화를 깨뜨림.
+
+ -- 베스트 프랙티스
+ -> 기본적으로 그냥 개체를 반환 (컴파일러가 알아서 빠르게 해준다....)
+ -> 더 빨라진다고 입증된 경우에만 함수가 rvalue를 반환하도록 바꾸자 ( 하지만 항상 컴파일러가 알아서 해주진 않는다. 이럴 때는 쓰자.)
+

@@ -1,0 +1,137 @@
+- STL 컨테이너의 목적
+
+1. 템플릿 기반 (C#의 제네릭 같은..)
+2. 모든 컨테이너에 적용되는 표준 인터페이스(모든 컨테이너에 공통으로 적용되는 인터페이스... 추상화를 시도함)
+3. 메모리 자동 관리(고대 C++을 겪어왔으니 이게 좋긴 하겠지만, 그만한 단점 존재)
+
+
+- 맵
+ 키(key)와 값(value)의 쌍들(pair)를 저장.
+ 키는 중복될 수 없음.
+ c++의 맵은 자동 정렬되는 컨테이너
+ 이진 탐색 트리 기반.
+ (오름차순)
+
+ std::map<std::string, int> simpleScoreMap;
+
+ simpleScoreMap.insert(std::pair<std::string>, int>> ("Mocha", 100));
+
+ simpleScoreMap["Mocha"] = 0;
+ -> Mocha가 가진 값 100을 0으로 만듦.
+
+
+- 셋
+ 정렬되는 컨테이너
+ 중복되지 않는 키를 요소로 저장함
+ 역시 이진 탐색 트리 기반
+ (오름차순)
+
+셋은 맵과 거의 같다! , 맵에서 값이 빠진 것.
+키이자 밸류를 가지는 게 셋.
+장점과 단점도 맵과 같다.
+
+
+- 멀티셋(multi-set)
+ 중복키를 허용(여러 개의 키가 값 하나를 가리키는 것이 가능)
+ 요소를 수정하면 안 됨
+
+- 멀티맵(multi-map)
+ 중복키를 허용(valeu까지 있는 것.)
+
+- 덱(디큐,deque)
+ Double-ended queue의 약자
+ 양쪽 끝에서 요소 삽입과 삭제가 모두 가능 ( 큐 2개 쓰는 느낌)
+
+- 우선순위 큐(priority-queue)
+ 자동 정렬되는 큐
+
+
+ 
+ L 164
+- enum class를 이용해 for loop statement 작성하기
+
+
+enum class eScoreType
+{
+	Assignment1,
+	Assignment2,
+	Assignment3,
+	Assignment4,
+	Count
+};
+
+잘못된 예
+
+for (int i = eScoreType::Assignment1;
+			i < eScoreType::Count;
+			++i)
+	{
+		// 점수 처리...
+	}
+
+올바른 예
+
+for (int i = static_cast<int> (eScoreType::Assignment1) ;)
+			i < static_cast<int> (eScoreType::Count) ;
+			++i)
+	{
+		// 점수 처리...
+	}
+
+기존에 enum을 쓰듯 할 수 없으니 이를 static_cast로 넘겨줘서 for 문 처리.
+
+L 174
+
+- 범위 기반 for 반복문(range based for loop)
+
+std::map<std::string, int> scoreMap;
+
+
+
+for (auto& score : scoreMap )
+{
+	std::cout << score.first << ": "
+				<< score.second << std::endl;
+}
+
+vector<int> nums;
+nums.reserve(5);
+
+nums.push_back(1);
+nums.push_back(2);
+nums.push_back(3);
+nums.push_back(4);
+nums.push_back(5);
+
+for (int n : nums)
+{
+	n++;
+}
+
+위 코드에서 원본은 변경되지 않는다. 따라서 무의미함.
+벡터 안에 든 요소들을 건드리려면
+for (int& n : nums)
+{
+	n++;
+}
+ 
+이렇게. 출력하자면
+
+for (auto iter = nums.begin() ; iter != nums.end(); ++iter)
+{
+	cout << *iter << endl;
+}
+
+
+
+- lvalue rvalue
+https://modoocode.com/189
+뭘 배웠지?
+
+함수의 오버로딩에서 void foo(X& x); 는 좌측값 참조 오버로딩, void foo(X&& x); 은 우측값 참조 오버로딩
+
+여러분은 이를 통해 foo 가 좌측값에, 혹은 우측값에 호출됨에 따라서 상황을 적절하게 처리할 수 있게 됩니다. 또한 특히 우측값 처리시에, 예외 처리에 신경을 써주어서, 예외를 throw 하지 않도록, 그리고 마지막에는 꼭 noexcept 키워드를 넣어 주어야만 합니다.
+
+std::move 는 받은 인자를 우측값으로 변환한다.
+
+std::forward 는 완벽한 전달을 할 수 있도록 도와준다.

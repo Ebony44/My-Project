@@ -1,0 +1,57 @@
+- 스마트 포인터
+
+<memory>
+
+- 나오게 된 배경
+ -> 기존 포인터의 문제가 너무 컸다.
+	더 이상 포인터가 필요하지 않을 때 메모리를 해제해야 함
+ -> 스마트포인터를 쓰면 더 이상 delete를 직접 호출할 필요가 없다.
+ -> 가비지 컬렉션보다 빠르다.
+
+
+
+
+ - making unique_ptr (C++11)
+
+ std::unique_ptr<Vector> myVector(new Vector(10.0f,30.0f));
+
+ myVector->Print();
+
+
+
+ - 유니크 포인터가 적합한 3가지 경우
+ 1. 클래스에서 생성자/소멸자 -> 소멸자가 default가 되버릴 수도 있다.
+ 2. 지역변수 쓸 때 -> 스택에 엄청 큰 object를 잡으면 문제가 생기는 데 이럴 땐
+ heap에 생성해야 해서 -> 이럴 때 쓰자.
+ 3. STL 벡터에 포인터 저장하기.
+ 
+
+ - making unique_ptr(C++14)
+ 이전에선
+ Vector* vectorPtr = new Vector(10.0f, 30.0f);
+ std::unique_ptr<Vector> vector(vectorPtr);
+ std::unique_ptr<Vector> anotherVector(vectorPtr);
+ anotherVector = nullptr;
+
+ -> 이런 난리가 난다
+ 그래서 C++14 이후의 해결책은
+
+ std::unique_ptr<Vector> myVector = std::make_unique<Vector>(10.0f,30.0f);
+
+ make_unique를 쓰자.
+
+
+ C++14 이전이라면
+ std::unique_ptr<Vector> vector(new Vector(10.0f,30.0f));
+ std::unique_ptr<Vector[]> vector(new Vector[20]);
+
+ 이후라면
+
+ std::unique_ptr<Vector> vector = std::make_unique<Vector>(10.0f,30.0f);
+ std::unique_ptr<Vector[]> vector = std::make_unique<Vector[]>(20);
+
+
+ std::shared_ptr
+
+ 1. 오버헤드(weak_ptr 때문에 unique_ptr가 퍼포먼스 손해가 거의 없는 것에 비해 2배 정도 + 매 대입연산마다 참조가 줄어드는지 늘어나는지를 파악해야 해서...)
+ 2. 순환참조(weak_ptr로 해결 가능)

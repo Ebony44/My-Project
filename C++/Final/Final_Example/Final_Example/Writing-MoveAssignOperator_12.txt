@@ -1,0 +1,51 @@
+- 이동 대입 연산자
+
+
+MyString& MyString::operator=(MyString&& rhs)
+{
+	if (this != &other)
+	{
+		delete[] mString;
+		
+		mString = rhs.mString;
+		mSize = rhs.mSize;
+
+		rhs.mString = nullptr;
+		rhs.mSize = 0;
+
+	}
+
+	return *this;
+}
+// 삭제, 생성, 대입
+
+
+// Main.cpp
+
+MyString studentName("Lulu");
+MyString anotherStudentName("Teemo");
+
+anotherStudentName = std::move(studentName);
+
+
+- 이동 대입 연산자
+-> 이동 생성자와 같은 개념
+-> 다른 개체 멤버 변수들의 소유권을 가져옴
+-> 이것도 메모리 재할당을 하지 않음
+-> 얕은 복사
+
+
+C++11 이후로 STL 컨테이너에 이동 생성자, 이동 대입 연산자가 알아서 구현되어 있음.
+
+이렇게 알아서 구현된 걸 쓰면
+-> swap 함수랑 비슷하게 작동한다.
+
+Example
+int main()
+{
+	std::vector<float> scores;
+	scores = Math::ConvertToPercentage(scores);
+	return 0
+}
+->  operator= 끝난 후에 swap됨 뭐 결과적으로 저 함수 끝나고 나서 rvalue라서 지워지긴 하지만..조금 꺼림칙.
+

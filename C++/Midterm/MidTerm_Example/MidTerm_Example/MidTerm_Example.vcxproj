@@ -166,6 +166,10 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ass3_QueueStackMemory.h" />
+    <ClInclude Include="BinarySearchTree.h" />
+    <ClInclude Include="BinarySearchTreeAfixedver.h" />
+    <ClInclude Include="CustomMath.h" />
     <ClInclude Include="Exam1_Animal8.h" />
     <ClInclude Include="Exam1_base.h" />
     <ClInclude Include="Exam1_Cat8.h" />
@@ -178,8 +182,10 @@
     <ClInclude Include="Exam1_StaticVariables10.h" />
     <ClInclude Include="Exam1_VirtualFunction13.h" />
     <ClInclude Include="Exam1_VirtualFunction_Derived13.h" />
+    <ClInclude Include="FixedBoolVector.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Ass3QuestackHeaderBackup.txt" />
     <Text Include="Writing-AccessModifier_16.txt" />
     <Text Include="Writing-CopyAndAssign_4.txt" />
     <Text Include="Writing-coutFormatting_1.txt" />

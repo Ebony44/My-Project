@@ -1,0 +1,355 @@
+#pragma once
+
+#include <cmath>
+#include <limits>
+//#include <iostream>
+#include <stack>
+#include <queue>
+
+#include "CustomMath.h"
+
+using std::stack;
+using std::queue;
+
+namespace assignment3
+{
+	template <typename T>
+	class QueueStack
+	{
+	public:
+
+		QueueStack(unsigned int maxStackSize);
+		virtual ~QueueStack();
+		QueueStack(const QueueStack& other);
+		QueueStack& operator=(const QueueStack& other);
+
+
+		void Enqueue(T number);
+		T Peek() const;
+		T Dequeue();
+
+		T GetMax();
+		T GetMin();
+		double GetAverage();
+		T GetSum();
+		double GetVariance();
+		double GetStandardDeviation();
+		unsigned int GetCount();
+		unsigned int GetStackCount();
+
+
+	private:
+
+		queue<stack<T>> mQueueStack;
+		// 2 ways
+		// 1. grab last stack in member variable
+		// 2. make new queue every Enqueue()
+
+		stack<T> mLastStack;
+
+		// right now: push it after full stack
+		// change to: push first and save it
+
+		unsigned int mMaxStackSize;
+
+		// guess mCurrentStackSize is removable
+
+		size_t mCurrentStackSize;
+
+		// actually stackCount is removable too
+		//size_t mStackCount;
+		//size_t mDequeuedCount;
+		
+	};
+
+	template <typename T> QueueStack<T>::QueueStack(unsigned int maxStackSize)
+		: mMaxStackSize(maxStackSize)
+		, mCurrentStackSize(0)
+	{
+		/*
+		stack<T> tempStack;
+		mLastStack = tempStack;
+		mQueueStack.push(mLastStack);
+		*/
+		
+		
+	}
+	
+	template <typename T> QueueStack<T>::~QueueStack()
+	{
+
+	}
+
+	template <typename T> QueueStack<T>::QueueStack(const QueueStack& other)
+		: mMaxStackSize(other.mMaxStackSize)
+		, mCurrentStackSize(other.mCurrentStackSize)
+	{
+		mQueueStack = other.mQueueStack;
+		mLastStack = other.mLastStack;
+	}
+
+	template <typename T>
+	QueueStack<T>& QueueStack<T>::operator=(const QueueStack& rhs)
+	{
+		if (this != &rhs)
+		{
+			mMaxStackSize = rhs.mMaxStackSize;
+			mCurrentStackSize = rhs.mCurrentStackSize;
+			mQueueStack = rhs.mQueueStack;
+			mLastStack = rhs.mLastStack;
+		}
+
+		return *this;
+
+	}
+
+	template <typename T>
+	void QueueStack<T>::Enqueue(T number)
+	{
+		// current size > maximum limit..??
+		// current size == maximum limit -> next
+		// current size < maximum limit -> fill the element into current stack
+
+		// 0 . if there is no dequeued front stack -> proceed
+		// if not, fill into the front queue's stack
+
+		// 1. current queue's stack + last stack
+		// 2. if exceed the maxstacksize, push it into the queue and repeat queue's stacks + last stack when needed
+
+		// TODO implement step 1 and 2
+
+
+		// condition 0
+		if (mQueueStack.front().size() != mMaxStackSize)
+		{
+			mQueueStack.front().push(number);
+			
+			return;
+			
+		}
+
+		if (mCurrentStackSize < mMaxStackSize)
+		{
+			//mQueueStack.front().push(number);
+			mLastStack.push(number);
+			mCurrentStackSize++;
+			if (mCurrentStackSize == mMaxStackSize)
+			{
+				mQueueStack.push(mLastStack);
+				stack<T> tempStack;
+				mLastStack = tempStack;
+
+				mCurrentStackSize = 0;
+			}
+
+		}
+
+	}
+	template <typename T>
+	T QueueStack<T>::Peek() const
+	{
+		if (mQueueStack.size() != 0)
+		{
+			return mQueueStack.front().top();
+		}
+		else if (mLastStack.size() != 0)
+		{
+			return mLastStack.top();
+		}
+		else
+		{
+			return 0;
+		}
+		
+	}
+
+	template <typename T>
+	T QueueStack<T>::Dequeue()
+	{
+		T tempValue = 0;
+
+		// no stacks in here
+		if (mQueueStack.size() == 0)
+		{
+			if (mLastStack.size() != 0)
+			{
+				tempValue = mLastStack.top();
+				mLastStack.pop();
+				return tempValue;
+			}
+		}
+
+		if (mQueueStack.front().size() != 0)
+		{
+			tempValue = mQueueStack.front().top();
+			mQueueStack.front().pop();
+
+			//mDequeuedCount++;
+
+			// flush front stack
+			if (mQueueStack.front().size() == 0)
+			{
+				mQueueStack.pop();
+				//mDequeuedCount = 0;
+			}
+
+			return tempValue;
+
+		}
+		
+		
+		return tempValue;
+		
+
+		
+	}
+
+	template <typename T>
+	T QueueStack<T>::GetMax()
+	{
+		if (mQueueStack.size() != 0 || mLastStack.size() != 0)
+		{
+			T tempMax = mQueueStack.front().top();
+			queue<stack<T>> tempQueueStack = mQueueStack;
+			stack<T> tempLastStack = mLastStack;
+
+			size_t tempSize = tempQueueStack.size() * mMaxStackSize + (tempQueueStack.front().size() - mMaxStackSize);
+			for (size_t i = 0; i < tempSize; i++)
+			{
+				if (tempMax < tempQueueStack.front().top())
+				{
+					tempMax = tempQueueStack.front().top();
+				}
+				
+				tempQueueStack.front().pop();
+
+				if (tempQueueStack.front().size() == 0)
+				{
+					tempQueueStack.pop();
+				}
+			}
+			tempSize = tempLastStack.size();
+			for (size_t i = 0; i < tempSize; i++)
+			{
+				if (tempMax < tempLastStack.top())
+				{
+					tempMax = tempLastStack.top();
+				}
+				
+				tempLastStack.pop();
+			}
+
+			return tempMax;
+		}
+		else
+		{
+			return std::numeric_limits<T>::min();
+		}
+		
+	}
+	
+	template <typename T>
+	T QueueStack<T>::GetMin()
+	{
+		if (mQueueStack.size() != 0 || mLastStack.size() != 0)
+		{
+			T tempMin = mQueueStack.front().top();
+			queue<stack<T>> tempQueueStack = mQueueStack;
+			stack<T> tempLastStack = mLastStack;
+
+			size_t tempSize = tempQueueStack.size() * mMaxStackSize + (tempQueueStack.front().size() - mMaxStackSize);
+			for (size_t i = 0; i < tempSize; i++)
+			{
+				if (tempMin > tempQueueStack.front().top())
+				{
+					tempMin = tempQueueStack.front().top();
+				}
+
+				tempQueueStack.front().pop();
+
+				if (tempQueueStack.front().size() == 0)
+				{
+					tempQueueStack.pop();
+				}
+			}
+			tempSize = tempLastStack.size();
+			for (size_t i = 0; i < tempSize; i++)
+			{
+				if (tempMin > tempLastStack.top())
+				{
+					tempMin = tempLastStack.top();
+				}
+
+				tempLastStack.pop();
+			}
+
+			return tempMin;
+		}
+		else
+		{
+			return std::numeric_limits<T>::max();
+		}
+		
+	}
+	
+	template <typename T>
+	double QueueStack<T>::GetAverage()
+	{
+		double tempAverage = 0;
+		tempAverage = static_cast<double>(QueueStack<T>::GetSum()) / QueueStack<T>::GetCount();
+		return RoundMath(tempAverage);
+	}
+	
+	template <typename T>
+	T QueueStack<T>::GetSum()
+	{
+		T tempSum = 0;
+
+		queue<stack<T>> tempQueueStack = mQueueStack;
+		stack<T> tempLastStack = mLastStack;
+
+		size_t tempSize = tempQueueStack.size() * mMaxStackSize + (tempQueueStack.front().size() - mMaxStackSize);
+		for (size_t i = 0; i < tempSize; i++)
+		{
+			tempSum += tempQueueStack.front().top();
+			tempQueueStack.front().pop();
+			if (tempQueueStack.front().size() == 0)
+			{
+				tempQueueStack.pop();
+			}
+		}
+		tempSize = tempLastStack.size();
+		for (size_t i = 0; i < tempSize; i++)
+		{
+			tempSum += tempLastStack.top();
+			tempLastStack.pop();
+		}
+
+		return tempSum;
+
+	}
+
+	template <typename T>
+	unsigned int QueueStack<T>::GetCount()
+	{
+		unsigned int tempCount = 0;
+		tempCount = (mQueueStack.size() * mMaxStackSize) + mLastStack.size() + (mQueueStack.front().size() - mMaxStackSize);
+		return tempCount;
+	}
+
+	template <typename T>
+	unsigned int QueueStack<T>::GetStackCount()
+	{
+		unsigned int tempCount = 0;
+		tempCount = mQueueStack.size();
+
+		if (mLastStack.size() != 0)
+		{
+			tempCount++;
+		}
+
+		return tempCount;
+	}
+
+
+}

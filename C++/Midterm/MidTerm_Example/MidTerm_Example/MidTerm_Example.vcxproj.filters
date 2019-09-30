@@ -22,6 +22,18 @@
     <Filter Include="리소스 파일\WritingTest">
       <UniqueIdentifier>{017d0157-9d8c-41f3-8927-e6c3f3a619e9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\Ass3">
+      <UniqueIdentifier>{9eb7968f-255d-4077-93b1-5f7a6e649208}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Ass3">
+      <UniqueIdentifier>{981814d8-e53a-4a35-b1e9-9048f2b5cde0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Lab8">
+      <UniqueIdentifier>{e6bb6f68-0edd-44e2-a94c-7a8d78a47c67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Ass4">
+      <UniqueIdentifier>{80c0bb84-bc05-4f2f-9da2-1437d6ff33b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Exam1_derived1.cpp">
@@ -101,6 +113,21 @@
     <ClInclude Include="Exam1_StaticVariables10.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Ass3_QueueStackMemory.h">
+      <Filter>헤더 파일\Ass3</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomMath.h">
+      <Filter>소스 파일\Ass3</Filter>
+    </ClInclude>
+    <ClInclude Include="FixedBoolVector.h">
+      <Filter>헤더 파일\Lab8</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySearchTree.h">
+      <Filter>헤더 파일\Ass4</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySearchTreeAfixedver.h">
+      <Filter>헤더 파일\Ass4</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Writing-coutFormatting_1.txt">
@@ -156,6 +183,9 @@
     </Text>
     <Text Include="Writing-OrderOfConstructorAndDestructor_17.txt">
       <Filter>리소스 파일\WritingTest</Filter>
+    </Text>
+    <Text Include="Ass3QuestackHeaderBackup.txt">
+      <Filter>리소스 파일</Filter>
     </Text>
   </ItemGroup>
 </Project>

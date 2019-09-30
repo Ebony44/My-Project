@@ -1,4 +1,9 @@
 ﻿  Main.cpp
-c:\users\doomt\documents\my-project\c++\midterm\midterm_example\midterm_example\main.cpp(280): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\doomt\documents\my-project\c++\midterm\midterm_example\midterm_example\main.cpp(281): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\doomt\documents\my-project\c++\midterm\midterm_example\midterm_example\main.cpp(283): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\doomt\documents\my-project\c++\midterm\midterm_example\midterm_example\main.cpp(284): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\doomt\documents\my-project\c++\midterm\midterm_example\midterm_example\main.cpp(377): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\doomt\documents\my-project\c++\midterm\midterm_example\midterm_example\main.cpp(378): warning C4244: '+=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\doomt\documents\my-project\c++\midterm\midterm_example\midterm_example\main.cpp(379): warning C4244: '+=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\doomt\documents\my-project\c++\midterm\midterm_example\midterm_example\main.cpp(380): warning C4244: '+=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\doomt\documents\my-project\c++\midterm\midterm_example\midterm_example\main.cpp(381): warning C4244: '+=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   MidTerm_Example.vcxproj -> C:\Users\doomt\Documents\My-Project\C++\Midterm\MidTerm_Example\Debug\MidTerm_Example.exe

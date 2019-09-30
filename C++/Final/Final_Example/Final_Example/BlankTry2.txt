@@ -1,0 +1,128 @@
+
+
+
+4. 벡터
+
+
+오브젝트 벡터
+
+삽입
+
+std::vector<Score> scores;
+
+for (auto it = scores.begin(); it != scores.end(); ++it)
+{
+	if(it->GetScore() == 40)
+	{
+		it->SetScore(70);
+	}
+}
+
+
+삭제
+
+auto it = scores.begin();
+while(it != scores.end())
+{
+	if(it->GetClassName() == "asdf")
+	{
+		it = scores.erase(it);
+	}
+	else
+	{
+		++it;
+	}
+}
+
+포인트 벡터
+
+삭제
+
+
+
+//template<typename T, typename U>
+class MyClass
+{
+public:
+	MyClass() = delete;
+	virtual ~MyClass() = default;
+
+	MyClass(const string& name, int score);
+	MyClass(const MyClass& other) = default;
+	MyClass& operator=(const MyClass& rhs) = default;
+
+	MyClass(MyClass&& other);
+	MyClass& operator=(MyClass&& rhs);
+
+private:
+	//std::unique_ptr<std::map<T, U>> mMap;
+	string mName;
+	int mScore;
+
+	
+
+}
+
+11. 이동 생성자
+
+	MyClass(MyClass&& other);
+
+	MyClass::MyClass(MyClass&& other)
+	: mName(other.mName)
+	, mScore(other.mScore)
+	{
+		other.mName = "";
+		other.mScore = 0;
+	}
+
+12. 이동 대입 연산자
+
+	MyClass& operator=(MyClass&& rhs)
+	{
+		if (this != &rhs)
+		{
+			mName = "";
+			mScore = 0;
+
+			mName = rhs.mName;
+			mScore = rhs.mScore;
+
+			rhs.mName = "";
+			rhs.mScore = 0;
+			
+		}
+
+
+		return *this;
+	}
+
+
+
+14. 스마트 포인터
+
+unique_ptr
+
+c++11 이전
+
+std::unique_ptr<int> myPtr(new int(15));
+
+c++14 이후
+
+std::unique_ptr<int> myPtr = std::make_unique<int>(15);
+
+
+shared_ptr
+
+std::shared_ptr<vector<int>> mySharedPtr = make_shared<vector<int>>(15);
+std::shared_ptr<map<std::string,int>> mySaredPtr2 = make_shared<map<std::string, int>>("asdf", 24);
+
+weak_ptr
+
+
+17. 람다 식
+
+[](){}
+
+int a = 23;
+int b = 34;
+auto myInt = [=](){ return a + b;};

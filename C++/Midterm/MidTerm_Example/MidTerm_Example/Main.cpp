@@ -3,7 +3,7 @@
 
 
 #include <bitset>
-
+#include <cmath>
 #include <string>
 
 
@@ -32,8 +32,11 @@
 
 #include "Exam1_PointAndRef15.h"
 
+#include "Ass3_QueueStackMemory.h"
+
 using namespace midterm;
 using namespace std;
+using namespace assignment3;
 
 //std::cout 
 
@@ -312,10 +315,226 @@ void Question14_ex()
 
 }
 
+void Ass3MemoryTest()
+{
+	QueueStack<int>* qs1 = new QueueStack<int>(1);
+	QueueStackMinimalized<int>* qsm1 = new QueueStackMinimalized<int>(1);
+	size_t qsSize = sizeof(*qs1);
+	size_t qsmSize = sizeof(*qsm1);
+
+	
+
+	size_t qsQueueStackSize = sizeof(qs1->mQueueStack);
+	size_t qsmStackSize = sizeof(qsm1->mStandbyStack);
+	size_t qsmQueueSize = sizeof(qsm1->mCompleteQueue);
+
+
+	stack<int> ss1;
+
+	size_t ssSize = sizeof(ss1);
+
+}
+struct bsArray
+{
+	bool firstBool : 1;
+	bool secondBool : 1;
+	bool thirdBool : 1;
+	bool fourthBool : 1;
+	bool fifthBool : 1;
+	bool sixthBool : 1;
+	bool seventhBool : 1;
+	bool eighthBool : 1;
+} BoolStructArray[12];
+
+struct bsBit
+{
+	bool firstBool : 1;
+	bool secondBool : 1;
+	bool thirdBool : 1;
+	bool fourthBool : 1;
+	bool fifthBool : 1;
+	bool sixthBool : 1;
+	bool seventhBool : 1;
+	bool eighthBool : 1;
+	//bool ninethBool : 1;
+	//bool tenthBool : 1;
+	//bool eleventhBool : 1;
+	//bool twelvethBool : 1;
+};
+
+
+void Lab81BitTest()
+{
+	
+	__int32 testInt;
+	bool turnOn = true;
+	bool turnOff = false;
+	__int32 testInt2 = 17;
+	__int32 testInt3 = 16;
+	bool testint2Bool = testInt2 & 1;
+	bool testint3Bool = testInt3 & 1;
+
+	testInt = pow(2, 2) * turnOn;
+	testInt += pow(2, 3) * turnOff;
+	testInt += pow(2, 4) * turnOn;
+	testInt += pow(2, 5) * turnOff;
+	testInt += pow(2, 6) * turnOn;
+
+	cout << testInt << endl;
+
+	int bits = 0x0030;
+	bool third_bit = bits & 0x0004;
+	bool fifth_bit = bits & 0x0010;
+
+	bitset<512> b(std::string("001"));
+	b.set(2, true);
+	cout << bits << endl;
+	cout << third_bit << endl;
+	cout << fifth_bit << endl;
+	cout << b[1] << ' ' << b[2] << endl;
+	cout << boolalpha << " test int 2 is : " << testint2Bool << " and 3 is : " << testint3Bool << endl;
+
+	bool boolArray[3];
+	__int32 oneBitData = 0;
+
+	boolArray[0] = oneBitData;
+	boolArray[1] = ~oneBitData;
+	oneBitData = 1;
+	boolArray[2] = oneBitData;
+
+	cout << boolalpha << boolArray[0] << endl;
+	cout << boolalpha << boolArray[1] << endl;
+	cout << boolalpha << boolArray[2] << endl;
+
+	
+	//typedef struct Bool { unsigned value : 1; } Bool;
+	struct 
+	{
+		
+		unsigned int firstBool : 1;
+		unsigned int secondBool : 1;
+		unsigned int thirdBool : 1;
+		unsigned int fourthBool : 1;
+		unsigned int fifthBool : 1;
+		unsigned int sixthBool : 1;
+		unsigned int seventhBool : 1;
+		unsigned int eighthBool : 1;
+		
+
+	} BoolStruct;
+	class TestStructAndClass
+	{
+		enum { MAX = 9};
+
+	public:
+		TestStructAndClass()
+			: mSize(0)
+		{
+
+		}
+		size_t GetSize()
+		{
+			return 0;
+		}
+		unsigned int GetFirstBool()
+		{
+			return 0;
+		}
+
+
+	private:
+		size_t mSize;
+		bsBit mArray[MAX];
+	};
+	
+	
+	
+	/*
+	struct
+	{
+
+		//__int32 firstBool[8] : 1;
+
+	} BoolStructArray;
+	*/
+	
+	TestStructAndClass tsClass;
+	cout << "boxprops size :" << sizeof(BoolStruct) << endl;
+	cout << "boolArray size :" << sizeof(BoolStructArray) << endl;
+	cout << "65 size :" << (sizeof(int32_t) * 3) << endl;
+	std::bitset<65> asdf;
+	cout << "bitset 65 size : " << sizeof(asdf) << endl;
+	std::bitset<64> zxcv;
+	cout << "bitset 64 size : " << sizeof(zxcv) << endl;
+	__int32 testArray[1];
+	__int32 testArray2[2];
+	__int32 testArray3[3];
+	cout << "int32[1] size : " << sizeof(testArray) << endl;
+	cout << "int32[2] size : " << sizeof(testArray2) << endl;
+	cout << "int32[3] size : " << sizeof(testArray3) << endl;
+
+	cout << "65/32 size : " << ceil(static_cast <float> (65) / 32) << endl;
+	cout << "StructClss size : " << sizeof(tsClass) << endl;
+
+	BoolStructArray[2].firstBool = 1;
+	BoolStructArray[2].secondBool = 0;
+
+	cout << boolalpha << BoolStructArray[2].firstBool << endl;
+	cout << boolalpha << BoolStructArray[2].secondBool << endl;
+
+
+	//unsigned int tempUInt = BoolStruct firstbool;
+	//unsigned int tempInt = BoolStruct[1];
+
+	BoolStruct.firstBool = 0;
+	BoolStruct.secondBool = 1;
+
+
+	__int32 reversedBoolArray[5];
+	bool boolData = true;
+	cout << "test of reversed" << endl;
+	reversedBoolArray[0] = BoolStruct.firstBool;
+	reversedBoolArray[1] = BoolStruct.secondBool;
+	boolData = false;
+	reversedBoolArray[2] = boolData;
+	reversedBoolArray[3] = oneBitData;
+	reversedBoolArray[4] = boolArray[0];
+
+
+
+	cout << boolalpha << reversedBoolArray[0] << endl;
+	cout << boolalpha << reversedBoolArray[1] << endl;
+	cout << boolalpha << reversedBoolArray[2] << endl;
+	cout << " [3] is oneBitdata (value is 1), [4] is boolArray[0] (value is 0)" << endl;
+	cout << boolalpha << static_cast<bool> (reversedBoolArray[3]) << endl;
+	cout << boolalpha << static_cast<bool> (reversedBoolArray[4]) << endl;
+
+	cout << "test of struct and class" << endl;
+
+	/*
+	TestStructAndClass testStructClass;
+	testStructClass.mStruct.firstBool = 1;
+	testStructClass.mStruct.secondBool = 1;
+
+	cout << boolalpha << static_cast<bool>(testStructClass.GetFirstBool()) << endl;
+	testStructClass.mStruct.firstBool = 0;
+	cout << boolalpha << static_cast<bool>(testStructClass.GetFirstBool()) << endl;
+	*/
+
+
+}
+
+
+
 
 int main()
 {
 
+	Lab81BitTest();
+
+	//Ass3MemoryTest();
+
+	/*
 	int* singedNumber = new int(-10);
 	unsigned int* unsignedNumber = reinterpret_cast<unsigned int*>(singedNumber);
 	//cout << dec << internal << setw(15)  << setfill('*') << 14 << endl;
@@ -374,7 +593,7 @@ int main()
 	int b = static_cast<int>(a);
 	//cout << bitset<32>(b) << endl;
 	cout << b << endl;
-
+	*/
 
 
 

@@ -1,0 +1,86 @@
+- Big O notation for Time Complexity
+
+- 벡터(Vector) / 스트링(string)
+
+-- 삽입 - O(n)
+-- 삭제 - O(n)
+		맨 끝에서의 삽입/삭제 -> amortized constant O(1)
+-- 탐색 - 정렬되어 있을 경우 O(log n), 그 외의 경우 O(N)
+-- 접근 - 임의 접근(Random Access) -> constant O(1)
+
+- 맵
+
+레드 - 블랙 트리로 구현된 경우
+
+-- 삽입 - 삽입 때 반복자로 인해 힌트를 줬다면 (amortized) O(1), 대체로 O (log N)
+-- 삭제 - 반복자로 인해 힌트를 줬다면 (amortized) O(1), 대체로 O (log N)
+
+/*
+ * For example, if you have a number of items in a file in sorted order, 
+ * and you want to insert them into the map, 
+ * you can specify your_map.end() as the "hint", 
+ * and building the map will have O(N) complexity instead of O(N Log N) complexity.
+ */
+ 레드 - 블랙 트리에선 모든 것이 다 log N이지만
+ 여기선 정렬을 해야 해서 N log N.
+
+-- 탐색 - 대체로 O(log N), 최악의 상황에서 O(2 log N)
+
+- 셋
+
+ -> 위의 맵과 동일
+
+-- 삽입 -
+-- 삭제 -
+-- 탐색 -
+
+
+
+- 큐
+
+-- 삽입 - O(1)
+-- 삭제 - O(1)
+-- 탐색 - O(1)
+
+-> 추가로 복사 생성과 대입 연산은 O(N)
+-> 소멸도 O(N)
+
+- 스택
+
+-- 삽입 - 맨 뒤에서 O(1), 특정 위치에서 O(N)
+-- 삭제 - 맨 뒤에서 O(1), 특정 위치에서 O(N)
+-- 탐색 - 정렬되어 있을 경우 O(log n), 그 외의 경우 O(N)
+
+-> 추가로 복사 생성과 대입 연산은 O(N)
+-> 소멸도 O(N)
+
+- 덱(deque)
+
+- 리스트
+
+-- 삽입 - 맨 앞과 뒤에서 O(1), 특정 위치에서 O(N)
+-- 삭제 - 맨 앞과 뒤에서 O(1), 특정 위치에서 O(N)
+-- 탐색 - O(N)
+
+- 해시맵
+
+-- 삽입 - O(1) 혹은 O(N)
+-- 삭제 - O(1) 혹은 O(N)
+-- 탐색 - O(1) 혹은 O(N)
+
+-> 해시 충돌 시엔 O(N)
+
+- 정렬 안 된 셋
+
+위의 해시맵과 완전히 동일하다.
+
+-- 삽입 -
+-- 삭제 -
+-- 탐색 -
+
+- 어레이
+
+
+-- 삽입 -
+-- 삭제 -
+-- 탐색 -

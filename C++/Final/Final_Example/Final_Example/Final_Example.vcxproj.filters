@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일\Reading">
+      <UniqueIdentifier>{d798c130-aca8-4d40-afa8-57ccc5cab6e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\Writing">
+      <UniqueIdentifier>{5ed3b458-2357-452b-8858-db3423e4de60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\Blank">
+      <UniqueIdentifier>{c494bb26-963a-4456-98c6-e26cc8050a9d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="HashExample.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="FinalResultReview.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Reading-ETC.txt">
+      <Filter>리소스 파일</Filter>
+    </Text>
+    <Text Include="Reading- Stack VS Queue_2.txt">
+      <Filter>리소스 파일\Reading</Filter>
+    </Text>
+    <Text Include="Reading- Array VS Vector_1.txt">
+      <Filter>리소스 파일\Reading</Filter>
+    </Text>
+    <Text Include="Reading- LinkedList VS Array, Vector_3.txt">
+      <Filter>리소스 파일\Reading</Filter>
+    </Text>
+    <Text Include="Reading- Vector_4.txt">
+      <Filter>리소스 파일\Reading</Filter>
+    </Text>
+    <Text Include="Reading- Map_5.txt">
+      <Filter>리소스 파일\Reading</Filter>
+    </Text>
+    <Text Include="Reading- HashMap VS Map_6.txt">
+      <Filter>리소스 파일\Reading</Filter>
+    </Text>
+    <Text Include="Reading- Set VS unorderedSet_7.txt">
+      <Filter>리소스 파일\Reading</Filter>
+    </Text>
+    <Text Include="Reading- Time complexity in containers%27 Insertion, Deletion, Search_8.txt">
+      <Filter>리소스 파일\Reading</Filter>
+    </Text>
+    <Text Include="Writing-TemplateProgramming_10.txt">
+      <Filter>리소스 파일\Writing</Filter>
+    </Text>
+    <Text Include="Writing-Iterator and STL algorithm_9.txt">
+      <Filter>리소스 파일\Writing</Filter>
+    </Text>
+    <Text Include="Writing-MoveConstructor_11.txt">
+      <Filter>리소스 파일\Writing</Filter>
+    </Text>
+    <Text Include="Writing-MoveAssignOperator_12.txt">
+      <Filter>리소스 파일\Writing</Filter>
+    </Text>
+    <Text Include="Writing-NewKeywords(auto, static_assert, default and delete, final, override)_13.txt">
+      <Filter>리소스 파일\Writing</Filter>
+    </Text>
+    <Text Include="Writing-smartptr(unique_ptr, shared_ptr, weak_ptr)_14.txt">
+      <Filter>리소스 파일\Writing</Filter>
+    </Text>
+    <Text Include="Reading- ReferenceCounting VS GarbageCollection_15.txt">
+      <Filter>리소스 파일\Reading</Filter>
+    </Text>
+    <Text Include="Reading- lvalue VS rvalue_16.txt">
+      <Filter>리소스 파일\Reading</Filter>
+    </Text>
+    <Text Include="Writing-Lambda Expression_17.txt">
+      <Filter>리소스 파일\Writing</Filter>
+    </Text>
+    <Text Include="ReferenceCounting_GarbageCollection.txt">
+      <Filter>리소스 파일\Blank</Filter>
+    </Text>
+    <Text Include="GuideForBlank.txt">
+      <Filter>리소스 파일\Blank</Filter>
+    </Text>
+    <Text Include="BlankTry1.txt">
+      <Filter>리소스 파일\Blank</Filter>
+    </Text>
+    <Text Include="Writing-ETC.txt">
+      <Filter>리소스 파일</Filter>
+    </Text>
+    <Text Include="BlankTry2.txt">
+      <Filter>리소스 파일\Blank</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Example1.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Example4.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Example5.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Example6.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Example10.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Example15.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="HashExample.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleTemplateProgramming_10_1.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="FinalResultReview.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

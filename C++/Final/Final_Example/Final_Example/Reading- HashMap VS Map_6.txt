@@ -1,0 +1,87 @@
+- 해시맵(unordered_map)
+ 
+ 요소의 삽입/제거가 빈번하다면 이 unordered_map을 쓴다.
+ -> 아래의 맵은 삽입/ 제거마다 정렬하는 데에 드는 시간 때문에 자원 소모가 큼.
+
+ -- 요소는 해쉬 함수가 생성하는 색인(index) 기반의 버킷들로 구성됨
+ -- unordered_map은 -> 해시맵이라고도 함.
+
+
+ -- 버킷의 내용을 보여주기!
+
+ int main()
+ {
+	std::unodered_map<std::string, int> scores;
+
+	scores["Nana"] = 60;
+	scores["Mocha"] = 60;
+	scores["Coco"] = 60;
+	scores["Ari"] = 60;
+	scores["Chris"] = 60;
+	
+	for (size_t i = 0; i < scores.bucket_count();++i)
+	{
+		std::cout << " Bucket #" << i << ": ";
+		for (auto iter = scores.begin(i); iter != scores.end(i); ++iter)
+		{
+			std::cout << "" << it->first << ":" << it->second;
+		}
+		std::cout << std::endl;
+	}
+
+	Bucket #0: 
+	Bucket #1: Ari:40 Coco:100 Nana:60
+	Bucket #2: 
+	Bucket #3: 
+	Bucket #4: Chris:90
+	Bucket #5: Mocha:70
+	Bucket #6: 
+	Bucket #7: 
+
+	-> 버킷 1에 Ari, Coco, Nana... 해시값이 중복되도 괜찮은 이유.
+
+
+
+ }
+
+
+
+
+- 맵
+
+find가 log n의 시간이 걸리는 이유
+
+이진 탐색 트리를 쓰고 있기 때문(red-black...etc)
+
+만약 원시 타입(primitive data type)이 아니라면
+
+std::string과 같은 형태라면
+찾는 데에 m log n만큼의 시간이 든다(여기서 m은 string의 길이만큼.)
+
+
+강의 204에도 나오는 내용. 
+O(N)을 O(1)로
+
+1. 문자열의 해쉬 생성 O(N)
+2. 그 이후에 해쉬 값(정수)를 비교 O(1)
+-> 좋다.
+
+
+                  | map             | unordered_map
+---------------------------------------------------------
+Ordering        | increasing  order   | no ordering
+                | (by default)        |
+
+Implementation  | Self balancing BST  | Hash Table
+                | like Red-Black Tree |  
+
+search time     | log(n)              | O(1) -> Average 
+                |                     | O(n) -> Worst Case
+
+Insertion time  | log(n) + Rebalance  | Same as search
+                      
+Deletion time   | log(n) + Rebalance  | Same as search
+
+
+
+
