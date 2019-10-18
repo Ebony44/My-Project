@@ -575,6 +575,10 @@ void StringAddWithTemplateTest()
 
 int main()
 {
+	unsigned char testInteger = 5;
+	testInteger = ~testInteger;
+	std::cout << ~testInteger << std::endl;
+	
 	 _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
 	 for (int i = 0; i >= 0; i--)
